@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Twin Unified Studios</title>
+  <header class="site-header">
+    <img src="images/TwinUnifiedStudios_logo_black.png" alt="Twin Unified Studios Logo" id="site-logo">
+  </header>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <button id="mode-toggle" class="mode-toggle">🌓</button>
+  <div class="page-wrapper">
+    <div class="content">
+      <div class="contact-container">
+        <div class="contact-text">
+          <h1>Contact Us</h1>
+          <p>
+            For commissions, inquiries, or collaborations, email us at
+            <strong>info@twinunifiedstudio.com</strong> or use the form below.
+          </p>
+          <p><em><strong><u>Notice:</u></strong>You must be at least 18 years of age to request services. If you are underage, your submission may be discarded and flagged for review to ensure compliance with our policies. Please refer to <a href="terms.html" class="inline-link">Terms of Service</a>.</em></p>
+          <p>Upon submission, you will be redirected to another site to confirm and then brought to a thank you page for security purposes.</p>
+        </div>
+          <form class="contact-form" action="https://formsubmit.co/info@twinunifiedstudios.com" method="POST">
+            <!-- Honeypot anti-bot field -->
+            <input type="text" name="_honey" style="display:none">
+
+            <!-- Redirect to your contact page after submission -->
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/BusinessWebsite/thank-you.html">
+
+            <!-- CAPTCHA enabled by default (don't include _captcha=false) -->
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." maxlength="400" required></textarea>
+            <p id="char-count">400 characters remaining</p>
+
+            <button type="submit">Send</button>
+          </form> 
+        </div>
+    </div>
+  </div>
+
+  <footer class="footer-nav">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="ourworks.html">Our Works</a>
+      <a href="products.html">Products We Use</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="cookienotice.html">Cookies</a>
+      <a href="dmca.html">DMCA Notice</a>
+      <a href="accessibility.html">Accessibility</a>
+    </nav>
+  </footer>
+  <div class="footer-bottom">
+  &copy; 2025 Twin Unified Studios. All rights reserved.
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
