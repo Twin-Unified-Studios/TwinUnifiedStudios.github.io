@@ -1,6 +1,8 @@
 console.log("Website is running!");
 
-// Set mode based on preference (system or stored)
+// ==============================
+// Light/Dark Mode Handling
+// ==============================
 function initializeMode() {
   const savedMode = localStorage.getItem('mode');
 
@@ -9,7 +11,6 @@ function initializeMode() {
   } else if (savedMode === 'light') {
     document.body.classList.remove('dark-mode');
   } else {
-    // No stored preference — detect system mode
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (prefersDark) {
       document.body.classList.add('dark-mode');
@@ -20,19 +21,16 @@ function initializeMode() {
     }
   }
 
-  updateLogoTheme(); // Set correct logo after mode is applied
+  updateLogoTheme();
 }
 
-// Toggle mode on user action
 function toggleMode() {
   const isDark = document.body.classList.toggle('dark-mode');
   const newMode = isDark ? 'dark' : 'light';
   localStorage.setItem('mode', newMode);
-  console.log(`Switched to ${newMode} mode`);
-  updateLogoTheme(); // Update logo when mode changes
+  updateLogoTheme();
 }
 
-// Update logo image based on mode
 function updateLogoTheme() {
   const logo = document.getElementById('site-logo');
   if (!logo) return;
@@ -43,6 +41,70 @@ function updateLogoTheme() {
     : 'images/TwinUnifiedStudios_logo_black.png';
 }
 
+// ==============================
+// Contact Form Character Count
+// ==============================
+function setupCharCount() {
+  const messageBox = document.getElementById('message');
+  const charCount = document.getElementById('char-count');
+  const maxChars = 400;
+
+  if (messageBox && charCount) {
+    messageBox.addEventListener('input', () => {
+      const remaining = maxChars - messageBox.value.length;
+      charCount.textContent = `${remaining} characters remaining`;
+
+      if (remaining <= 40) {
+        charCount.classList.add('warning');
+      } else {
+        charCount.classList.remove('warning');
+      }
+    });
+  }
+}
+
+// ==============================
+// Cookie Consent Banner (Accept & Decline)
+// ==============================
+function setupCookieBanner() {
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('accept-cookies');
+  const declineBtn = document.getElementById('decline-cookies');
+
+  if (
+    cookieBanner &&
+    !localStorage.getItem('cookiesAccepted') &&
+    !localStorage.getItem('cookiesDeclined')
+  ) {
+    setTimeout(() => {
+      cookieBanner.style.display = 'block';
+      cookieBanner.classList.add('show');
+    }, 100);
+  }
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', () => {
+      cookieBanner.classList.remove('show');
+      cookieBanner.classList.add('fade-out');
+      localStorage.setItem('cookiesAccepted', 'true');
+      setTimeout(() => (cookieBanner.style.display = 'none'), 600);
+    });
+  }
+
+  if (declineBtn) {
+    declineBtn.addEventListener('click', () => {
+      cookieBanner.classList.remove('show');
+      cookieBanner.classList.add('fade-out');
+      localStorage.setItem('cookiesDeclined', 'true');
+      setTimeout(() => (cookieBanner.style.display = 'none'), 600);
+      // Optional: disable analytics or scripts here
+    });
+  }
+}
+
+// ==============================
+// Initialize All on DOM Load
+// ==============================
 document.addEventListener('DOMContentLoaded', () => {
   initializeMode();
 
@@ -50,22 +112,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (toggleBtn) {
     toggleBtn.addEventListener('click', toggleMode);
   }
+
+  setupCharCount();
+  setupCookieBanner();
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const messageBox = document.getElementById('message');
-  const charCount = document.getElementById('char-count');
-  const maxChars = 400;
+function resetCookieConsent() {
+  localStorage.removeItem('cookiesAccepted');
+  localStorage.removeItem('cookiesDeclined');
 
-  messageBox.addEventListener('input', () => {
-    const remaining = maxChars - messageBox.value.length;
-    charCount.textContent = `${remaining} characters remaining`;
+  const banner = document.getElementById('cookie-banner');
+  if (banner) {
+    banner.classList.remove('fade-out'); // In case it is hidden
+    banner.style.display = 'block';
+    setTimeout(() => {
+      banner.classList.add('show');
+    }, 50);
+  }
 
-    // Add warning color if near limit
-    if (remaining <= 40) {
-      charCount.classList.add('warning');
-    } else {
-      charCount.classList.remove('warning');
-    }
-  });
-});
+  alert('Your cookie preferences have been reset. Please review them again.');
+}
