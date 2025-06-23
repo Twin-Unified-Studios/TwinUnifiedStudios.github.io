@@ -473,6 +473,25 @@ button:hover {
   text-align: left;
 }
 
+.contact-form select {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.contact-form select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 4px var(--accent-color);
+}
+
 .contact-form label {
   font-weight: bold;
 }
@@ -941,6 +960,14 @@ body.dark-mode .unity-logo {
   .contact-form textarea,
   .contact-form button {
     width: 100%;
+  }
+
+  .contact-form select {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
   }
 
   .team-member {
