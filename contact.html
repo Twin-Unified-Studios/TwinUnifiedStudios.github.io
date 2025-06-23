@@ -18,7 +18,7 @@
           <h1>Contact Us</h1>
           <p>
             For commissions, inquiries, or collaborations, email us at
-            <strong>info@twinunifiedstudios.com</strong> or use the form below.
+            <strong>info@twinunifiedstudio.com</strong> or use the form below.
           </p>
           <p><em><strong><u>Notice:</u></strong>You must be at least 18 years of age to request services. If you are underage, your submission may be discarded and flagged for review to ensure compliance with our policies. Please refer to <a href="terms.html" class="inline-link">Terms of Service</a>.</em></p>
           <p>Upon submission, you will be redirected to another site to confirm and then brought to a thank you page for security purposes.</p>
@@ -31,6 +31,17 @@
             <input type="hidden" name="_next" value="http://127.0.0.1:5500/BusinessWebsite/thank-you.html">
 
             <!-- CAPTCHA enabled by default (don't include _captcha=false) -->
+
+            <label for="inquiry">What are you contacting us about?</label>
+              <select id="inquiry" name="Inquiry Type" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Game Development">Game Development</option>
+                <option value="3D Asset Creation">3D Asset Creation</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Consultation / Planning">Consultation / Planning</option>
+                <option value="Other">Other</option>
+              </select>
 
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required>
