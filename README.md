@@ -2,7 +2,7 @@
 
 
 
-# Twin Unified Studios
+# Twin Unified Studios LLC
 
 Welcome to the official repository for **Twin Unified Studios** — a creative software and design studio founded by two brothers passionate about innovation, storytelling, and user-centric experiences.
 
@@ -91,7 +91,7 @@ info@twinunifiedstudios.com
 > [!IMPORTANT]  
 > This repository is not open source. All content, code, and materials are protected under copyright law and may not be used, copied, modified, or distributed without express written permission.
 
-All rights reserved © 2025 Twin Unified Studios.
+All rights reserved © 2025 Twin Unified Studios LLC.
 
 Unauthorized use, duplication, modification, or distribution of any part of this repository — including source code, images, text, layout, or design — is strictly prohibited and may result in civil and/or criminal penalties under applicable U.S. federal and state laws.
 
