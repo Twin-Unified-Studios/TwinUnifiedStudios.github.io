@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Twin Unified Studios</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <img src="images/TwinUnifiedStudios_logo_black.png" alt="Twin Unified Studios Logo" id="site-logo">
+  </header>
+  <button id="mode-toggle" class="mode-toggle">🌓</button>
+
+  <div class="page-wrapper">
+    <section class="waitlist-container">
+      <h1>Join the Commission Waitlist</h1>
+      <p>Please complete this form to express interest in working with us. We will review requests based on availability and project scope. If the project inquiry is out of our current scope, we will let you know after doing proper research.</p>
+      <br>
+      <h2 style="text-align: center; margin-top: 1rem;">
+        <span style="color: white;"><strong>Current Commission Slots:</strong></span><br>
+        <span style="color: limegreen;"><strong>6 out of 6 Requested Commissions Available</strong></span>
+      </h2>
+    <br>
+    <div style="height: 2rem;"></div>
+    <h2>Need to see our work? Head to the <a href="ourworks.html" class="inline-link">Our Works</a> page!</h2>
+    <h2>Or check out or 3rd party storefront here: </h2>
+    <h2><a href="https://www.cgtrader.com/designers/twinunifiedstudios" target="_blank" class="btn">Visit our CGTrader Store</a></h2>
+    <br>
+    <strong>Eligibility: </strong> you must be 18 years or older to inquire. Please refer to <a href="terms.html" class="inline-link">Terms of Service</a>.</p>
+    <p style="font-size: 1.1rem; font-weight: bold; margin-top: 1rem;">
+      Note: We are a small studio and do not currently accept large-scale or AAA-level projects. We appreciate your understanding.
+    </p>
+
+      <div class="waitlist-container">
+        <form action="https://formsubmit.co/info@twinunifiedstudios.com" method="POST" class="waitlist-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="Name" placeholder="Enter your name here." required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="Email" placeholder="Enter your email here." required>
+
+        <label for="project">Project Type:</label>
+        <select id="project" name="Project Type" required>
+          <option value="">-- Select One --</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Website Development">Web Development</option>
+          <option value="Game Development">Game Development</option>
+          <option value="3D Design">3D Design</option>
+          <option value="Software Development">Software Development</option>
+          <option value="Other">Other (please describe below)</option>
+        </select>
+
+        <label for="message">Project Summary or Notes:</label>
+        <textarea id="message" name="Message" rows="5" required maxlength="400" placeholder="Describe your project needs here." required></textarea>
+        <p id="char-count">400 Characters Remaining</p>
+
+        <label for="reference">Upload any reference here if applicable (Google Drive, Dropbox, etc.):</label>
+        <label for="reference"><small><em><strong>Legal Notice:</strong> All submissions are logged. Any attempts to submit malicious links, illegal content, or harmful materials may be referred to law enforcement agencies. Twin Unified Studios LLC cooperates with legal authorities in accordance with applicable laws to ensure the safety and security of our services. Please refer to our <a href="terms.html" class="inline-link">Terms Of Service</a> for more information.</em></small></label>
+        <input type="url" id="reference" name="Reference Link" placeholder="https://drive.google.com/... (Optional)">
+
+        <label>
+          <input type="checkbox" name="Age Confirmation" required>
+          I confirm that I am 18 years of age or older and agree to the <a href="terms.html" target="_blank">Terms of Service</a>.
+        </label>
+
+        <input type="hidden" name="_next" value="https://https://www.twinunifiedstudios.com/waitlist-thank-you.html">
+        <!-- Honeypot field (hidden from humans) -->
+        <input type="text" name="_honey" style="display:none">
+
+        <!-- Optional CAPTCHA (set to false for no CAPTCHA) -->
+        <input type="hidden" name="_captcha" value="true">
+
+        <button type="submit">Join the Waitlist</button>
+      </form>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer-nav">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="ourworks.html">Our Works</a>
+      <a href="products.html">Products We Use</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="cookiesnotice.html">Cookies</a>
+      <a href="dmca.html">DMCA Notice</a>
+      <a href="accessibility.html">Accessibility</a>
+    </nav>
+  </footer>
+  <div class="footer-bottom">
+    &copy; 2025 Twin Unified Studios LLC. All rights reserved.
+  </div>
+
+  <script src="script.js"></script>
+
+  <div id="cookie-banner" class="cookie-widget">
+    <p> We use cookies to enhance your experience. By using our site, you accept our <a href="cookiesnotice.html">Cookies Notice</a>.</p>
+    <button id="accept-cookies">Accept</button>
+    <button id="decline-cookies">Decline</button>
+  </div>
+</body>
+</html>
