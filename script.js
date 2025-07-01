@@ -115,6 +115,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupCharCount();
   setupCookieBanner();
+
+  // ==============================
+  // Make Logo Clickable (Except on index.html)
+  // ==============================
+  const logo = document.getElementById('site-logo');
+  const currentPath = window.location.pathname;
+  const isHomePage = window.location.href.endsWith('/index.html') || window.location.href === 'https://www.twinunifiedstudios.com/';
+
+  if (logo && !isHomePage) {
+    const wrapper = document.createElement('a');
+    wrapper.href = 'index.html';
+    wrapper.appendChild(logo.cloneNode(true));
+    logo.replaceWith(wrapper);
+  }
 });
 
 function resetCookieConsent() {
