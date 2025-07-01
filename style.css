@@ -173,6 +173,17 @@ body.dark-mode .cookie-widget {
   border-color: #ffea80;
 }
 
+.commission-status {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.status-count {
+  display: block;
+  color: limegreen;
+  font-weight: bold;
+}
+
 body.dark-mode .cookie-reset-button {
   background-color: #222;
   border-color: #ffd700;
@@ -521,6 +532,11 @@ button:hover {
   background-color: var(--accent-hover);
 }
 
+.commission-banner a {
+  display: inline-block;
+  line-height: 0;
+}
+
 .site-header {
   display: flex;
   align-items: center;
@@ -765,6 +781,86 @@ body.dark-mode .unity-logo {
   height: auto;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
+}
+
+.waitlist-form {
+  max-width: 600px;
+  margin: 3rem auto;
+  background-color: var(--bg-color);
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.waitlist-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.waitlist-form input,
+.waitlist-form textarea,
+.waitlist-form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  resize: none;
+}
+
+.waitlist-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.waitlist-form button {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.waitlist-form button:hover {
+  background-color: var(--accent-hover);
+}
+
+.waitlist-form a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.waitlist-form a:hover {
+  color: var(--accent-hover);
+}
+
+.waitlist-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.waitlist-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.waitlist-container p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .works-section {
@@ -1092,6 +1188,19 @@ body.dark-mode .unity-logo {
     cursor: zoom-in;
   }
 
+  .page-wrapper,
+  .waitlist-container,
+  .waitlist-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+
   .mobile-hint {
     display: block;
   }
@@ -1130,6 +1239,14 @@ body.dark-mode .unity-logo {
 
   .vscode-logo {
     max-width: 40px;
+  }
+
+  .waitlist-form input,
+  .waitlist-form textarea,
+  .waitlist-form select,
+  .waitlist-form button {
+    width: 100%;
+    box-sizing: border-box;
   }
 
 }
