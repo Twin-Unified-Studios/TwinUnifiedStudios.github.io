@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light" />
+    <title>Privacy Policy | InvoBaseOS</title>
+    <meta name="description" content="Privacy Policy for InvoBaseOS by Twin Unified Studios LLC." />
+    <link rel="stylesheet" href="style.css?v=2" />
+
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const initial = saved || (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", initial);
+          document.documentElement.style.colorScheme = initial;
+        } catch (e) {}
+        document.documentElement.classList.remove("no-js");
+      })();
+    </script>
+
+    <style>
+        .policy-page {
+            padding: var(--s-9) 0 var(--s-8);
+        }
+
+        .policy-container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 40px;
+            background: color-mix(in srgb, var(--bg-2) 84%, transparent);
+            border: 1px solid var(--border);
+            border-radius: var(--r-3);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .policy-container h1 {
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .policy-container h2 {
+            margin-top: 32px;
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+
+        .policy-container p {
+            margin-top: 10px;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .policy-container ul {
+            margin-top: 10px;
+            margin-bottom: 0;
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        .policy-container li {
+            margin-bottom: 8px;
+            line-height: 1.65;
+        }
+
+        .policy-container strong,
+        .highlight {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .policy-meta {
+            color: var(--muted);
+        }
+
+        .policy-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+
+        .policy-footer .footer-link-inline {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--muted);
+            font-weight: 700;
+            padding: 8px 10px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition:
+                color var(--dur-1) var(--ease),
+                background var(--dur-1) var(--ease),
+                border-color var(--dur-1) var(--ease);
+        }
+
+        .policy-footer .footer-link-inline:hover {
+            color: var(--text);
+            background: rgba(var(--accent), 0.07);
+            border-color: rgba(var(--accent), 0.18);
+        }
+
+        @media (max-width: 768px) {
+            .policy-page {
+                padding: var(--s-7) 0 var(--s-6);
+            }
+
+            .policy-container {
+                padding: 24px;
+            }
+
+            .policy-container h2 {
+                font-size: 1.08rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Twin Unified Studios Home">
+                <img
+                    class="brand-logo brand-logo--full theme-logo"
+                    src="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+                    data-logo-light="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+                    data-logo-dark="images/logo_kit/TwinUnifiedStudios_logo_white.png"
+                    alt="Twin Unified Studios"
+                    width="260"
+                    height="90"
+                />
+            </a>
+
+            <nav class="nav" aria-label="Primary">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                    <span class="nav-toggle-label">Menu</span>
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                </button>
+
+                <div id="navMenu" class="nav-menu" data-nav-menu>
+                    <a class="nav-link" href="index.html">Back to Main Site</a>
+                    <a class="nav-link" href="apphomepage.html">InvoBaseOS</a>
+                    <a class="nav-link nav-link--cta" href="tos.html">Terms of Service</a>
+
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="theme-emoji theme-emoji-moon">🌙</span>
+                        <span class="theme-emoji theme-emoji-sun">☀️</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="policy-page">
+        <div class="container">
+            <div class="policy-container">
+                <h1>Privacy Policy</h1>
+                <p class="policy-meta"><strong>Twin Unified Studios LLC – InvoBaseOS</strong></p>
+                <p class="policy-meta"><strong>Effective Date:</strong> April 14th, 2026</p>
+
+                <h2>1. Introduction</h2>
+                <p>
+                    This Privacy Policy explains how Twin Unified Studios LLC ("we," "our," or "us") handles information in connection with the InvoBaseOS website and application.
+                    InvoBaseOS is designed with a <span class="highlight">privacy-first, offline-first approach</span>.
+                    We intentionally minimize data collection and design the product around local control, security, and reduced exposure of business-sensitive information.
+                </p>
+
+                <h2>2. Scope</h2>
+                <p>This Privacy Policy applies to:</p>
+                <ul>
+                    <li>The InvoBaseOS website and related landing pages</li>
+                    <li>The InvoBaseOS application and related product pages</li>
+                    <li>Any future optional connected features, only if and when such features are introduced</li>
+                </ul>
+
+                <h2>3. Information We Collect</h2>
+
+                <p class="highlight">Website</p>
+                <ul>
+                    <li>Theme preference only, for light and dark mode display</li>
+                    <li>Policy banner acknowledgement preference, if you choose to dismiss the notice</li>
+                    <li>Information you voluntarily submit through the contact form, such as your name, email address, selected service, and project details</li>
+                </ul>
+
+                <p>We do not intentionally collect through normal website use:</p>
+                <ul>
+                    <li>Advertising identifiers</li>
+                    <li>Behavioral tracking data</li>
+                    <li>Unnecessary cookies</li>
+                    <li>Personal data for profiling or ad targeting</li>
+                </ul>
+
+                <p class="highlight">InvoBaseOS Application</p>
+                <ul>
+                    <li>Application data is intended to remain stored locally on your device</li>
+                    <li>Application data is intended to remain encrypted</li>
+                    <li>During normal offline use, invoice records, user records, and action logs are not transmitted to us</li>
+                </ul>
+
+                <h2>4. Cookies and Local Preferences</h2>
+                <p>
+                    The website uses <span class="highlight">strictly necessary local preference storage only</span> to remember your visual theme setting, such as light mode or dark mode, and whether you have dismissed the policy acknowledgement banner.
+                    These settings are stored in your browser and are used only to improve your viewing experience and avoid repeatedly showing the same notice.
+                    They are not used for advertising, profiling, tracking, or analytics.
+                </p>
+
+                <h2>5. How We Use Information</h2>
+                <p>
+                    Because InvoBaseOS is designed to minimize collection, our use of information is limited.
+                    Theme preference and policy acknowledgement data are used solely to preserve your selected visual theme across visits and remember whether you dismissed the policy notice.
+                    Contact form information is used to review and respond to your inquiry, discuss requested services, and maintain reasonable business records related to your request.
+                    We do not use website preference information to identify you personally, monitor your behavior, or sell insights about your activity.
+                </p>
+
+                <h2>6. Data Ownership and Local Control</h2>
+                <p>
+                    You retain ownership and control of your locally stored InvoBaseOS data.
+                    We do not claim ownership of your invoice records, local logs, account data, or business information created within the application.
+                    Under normal offline use, we do not receive or host that data.
+                </p>
+
+                <h2>7. Data Security</h2>
+                <p>
+                    Security and privacy are a core design priority for InvoBaseOS.
+                    Depending on the current version and feature set, security-oriented measures may include:
+                </p>
+                <ul>
+                    <li>Encryption of stored business and application data</li>
+                    <li>Tamper detection or tamper-aware safeguards</li>
+                    <li>Role-based access controls such as Primary Admin, Admin, and Standard access levels</li>
+                    <li>Re-authentication for certain sensitive or destructive actions</li>
+                    <li>Action logging and audit-oriented event tracking</li>
+                    <li>Multi-step verification or warning flows for destructive actions</li>
+                </ul>
+
+                <h2>8. Third-Party Sharing</h2>
+                <p>
+                    We do not sell personal information.
+                    We do not intentionally share personal information with advertisers, data brokers, or unrelated third parties through the normal use of the website or offline application.
+                    However, certain website features may rely on third-party service providers that process information as needed to provide those features.
+                </p>
+                <p class="highlight">Contact Form</p>
+                <p>
+                    If you submit the contact form, your submission may be processed by FormSubmit or a similar form delivery provider so that your message can be delivered to us by email.
+                    The information you choose to submit may include your name, email address, selected service, and project details.
+                    Please avoid submitting sensitive personal, financial, health, or confidential business information through the website contact form unless it is necessary for your inquiry.
+                </p>
+                <p class="highlight">Embedded Maps</p>
+                <p>
+                    The main website may include an embedded Google Maps frame to display a general location.
+                    When you load a page containing that map, Google may receive technical information from your browser, such as your IP address, device/browser information, and interaction data, according to Google's own policies.
+                    Twin Unified Studios LLC does not use the embedded map for advertising profiling or behavioral tracking.
+                </p>
+
+                <h2>9. Future Optional Features</h2>
+                <p>
+                    Future product updates may include optional connected services, such as cloud-based sync, backup, transfer, or account-linked features.
+                    If those features are introduced, they may involve additional data handling.
+                    Any such changes will be disclosed through an updated Privacy Policy, and any optional feature will be identified as such where reasonably applicable.
+                </p>
+
+                <h2>10. GDPR Notice for Users in the European Economic Area</h2>
+                <p>
+                    Under the General Data Protection Regulation (GDPR), users in the European Economic Area may have rights that can include:
+                </p>
+                <ul>
+                    <li>The right to access personal data</li>
+                    <li>The right to request correction of inaccurate personal data</li>
+                    <li>The right to request deletion of personal data</li>
+                    <li>The right to object to or restrict certain processing</li>
+                    <li>The right to data portability where applicable</li>
+                </ul>
+                <p>
+                    Because InvoBaseOS is designed for local-first use and because we generally do not receive or process your local application data during normal offline use, many of these rights are supported by the fact that your data remains under your own control on your own device.
+                </p>
+
+                <h2>11. CCPA Notice for California Residents</h2>
+                <p>
+                    Under the California Consumer Privacy Act (CCPA), California residents may have rights that can include:
+                </p>
+                <ul>
+                    <li>The right to know what personal information is collected</li>
+                    <li>The right to request deletion of personal information</li>
+                    <li>The right to request disclosure regarding categories and purposes of collection</li>
+                    <li>The right to opt out of the sale of personal information</li>
+                    <li>The right not to be discriminated against for exercising applicable privacy rights</li>
+                </ul>
+                <p>
+                    Twin Unified Studios LLC does <span class="highlight">not sell personal information</span>, and we do not use normal website or offline app usage to build advertising profiles or behavioral marketing records.
+                </p>
+
+            <h2>12. Children’s Privacy</h2>
+                <p>
+                    InvoBaseOS and its related services are intended solely for business and professional use by individuals who are 
+                    <span class="highlight">18 years of age or older</span>. 
+                    InvoBaseOS operates primarily as an offline application, with user data stored locally on the user’s device rather than transmitted to or maintained on centralized servers operated by Twin Unified Studios LLC. 
+                    As a result, we do not knowingly collect, monitor, or process personal information from individuals under the age of 18. 
+                    Users are solely responsible for the information entered into the application and for ensuring compliance with all applicable local, state, federal, and international laws and regulations regarding data usage and privacy.
+                </p>
+
+                <h2>13. Data Retention</h2>
+                <p>
+                    Because we generally do not receive or store your local application data during normal offline use, we do not maintain routine retention schedules for that local data.
+                    Preference storage used for website theme settings may remain on your device until cleared by you, your browser, or your device settings.
+                </p>
+
+                <h2>14. International Use</h2>
+                <p>
+                    If you access the website or product materials from outside the United States, you understand that information handled through your own browser, device, or any optional future services may be subject to the laws of the jurisdiction in which you are located as well as the laws applicable to Twin Unified Studios LLC.
+                </p>
+
+                <h2>15. No Guarantee of Absolute Security</h2>
+                <p>
+                    While we aim to design InvoBaseOS with strong privacy and security practices, no method of storage, transmission, device use, or software operation can be guaranteed to be completely secure.
+                    By using the website or application, you acknowledge that absolute security cannot be guaranteed.
+                </p>
+
+                <h2>16. Limitation of Liability</h2>
+                <p>
+                    To the maximum extent permitted by applicable law, Twin Unified Studios LLC shall not be liable for any indirect, incidental, consequential, special, exemplary, or punitive damages, or for any loss of profits, revenue, business, goodwill, data, invoices, records, or other intangible losses arising out of or relating to your use of, inability to use, or reliance on the website, the application, or related materials.
+                </p>
+
+                <h2>17. User Responsibility</h2>
+                <p>
+                    You are responsible for maintaining control of your own device, credentials, backups, exported records, and local access environment.
+                    Because InvoBaseOS is designed around local control and encrypted workflows, lost credentials, damaged local files, corrupted storage, deleted records, or inaccessible devices may not be recoverable by Twin Unified Studios LLC.
+                </p>
+
+                <h2>18. No Warranty</h2>
+                <p>
+                    The website, application, and all related materials are provided on an <span class="highlight">"as is"</span> and <span class="highlight">"as available"</span> basis, without warranties of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, title, non-infringement, availability, or accuracy, except where such disclaimers are prohibited by law.
+                </p>
+
+                <h2>19. Changes to This Privacy Policy</h2>
+                <p>
+                    We may update this Privacy Policy from time to time to reflect product changes, legal developments, business changes, or future optional features.
+                    When we do, we may revise the Effective Date shown above.
+                    Continued use of the website or application after an updated policy is posted constitutes acceptance of the revised policy to the extent permitted by law.
+                </p>
+
+                <h2>20. Contact</h2>
+                <p>Questions regarding this Privacy Policy may be directed to:</p>
+                <p>
+                    Twin Unified Studios LLC<br>
+                    Email: info@twinunifiedstudios.com
+                </p>
+
+                <div class="policy-footer">
+                    <a href="index.html" class="footer-link-inline">← Back to Main Site</a>
+                    <br>
+                    © 2026 Twin Unified Studios LLC. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js?v=1" defer></script>
+</body>
+</html>

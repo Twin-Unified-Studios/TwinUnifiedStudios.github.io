@@ -1,0 +1,453 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+
+  <title>Twin Unified Studios | Game Dev, 3D, Software, Design</title>
+  <meta name="description" content="Twin Unified Studios builds games, 3D assets, software, and web experiences with production-ready quality and a clear process." />
+
+  <meta property="og:title" content="Twin Unified Studios" />
+  <meta property="og:description" content="Game development, 3D asset creation, software engineering, and design—built for production." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css?v=2" />
+
+  <script>
+    // Theme boot: pick saved theme, otherwise follow system preference.
+    // This runs BEFORE render to avoid flash and ensures theme always matches variables.
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme"); // "dark" | "light" | null
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const initial = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", initial);
+        document.documentElement.style.colorScheme = initial;
+      } catch (e) {}
+      document.documentElement.classList.remove("no-js");
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand brand--wordmark" href="index.html" aria-label="Twin Unified Studios Home">
+        <img
+          class="brand-logo brand-logo--full theme-logo"
+          src="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+          data-logo-light="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+          data-logo-dark="images/logo_kit/TwinUnifiedStudios_logo_white.png"
+          alt="Twin Unified Studios"
+          width="260"
+          height="90"
+        />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-label">Menu</span>
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <div id="navMenu" class="nav-menu" data-nav-menu>
+          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#process">Process</a>
+          <a class="nav-link" href="#location">Location</a>
+          <a class="nav-link" href="products.html">Tools</a>
+          <a class="nav-link" href="apphomepage.html">InvoBaseOS</a>
+          <a class="nav-link nav-link--cta" href="#contact">Contact</a>
+
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="theme-emoji theme-emoji-moon">🌙</span>
+            <span class="theme-emoji theme-emoji-sun">☀️</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Game Dev • 3D • Software • Design</p>
+
+          <h1 class="hero-title">
+            Tech-forward builds that look sharp and ship clean.
+          </h1>
+
+          <p class="hero-subtitle">
+            Twin Unified Studios delivers production-ready game development, 3D assets, and software systems—tailored to your vision,
+            with a clear process and professional documentation.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start a Project</a>
+            <a class="btn btn-secondary" href="#work">View Work</a>
+          </div>
+
+          <div class="trust-row" role="list" aria-label="Highlights">
+            <div class="trust-item" role="listitem">
+              <span class="trust-kicker">Built to scale</span>
+              <span class="trust-text">Clean pipelines & documentation</span>
+            </div>
+            <div class="trust-item" role="listitem">
+              <span class="trust-kicker">Modern tools</span>
+              <span class="trust-text">Unity • Unreal • Blender • Web</span>
+            </div>
+            <div class="trust-item" role="listitem">
+              <span class="trust-kicker">Tailored delivery</span>
+              <span class="trust-text">Milestones, revisions, handoff</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <span class="chip">Customizable</span>
+              <span class="chip chip--outline">Techy</span>
+              <span class="chip chip--outline">Gamer</span>
+            </div>
+
+            <img
+              class="hero-image"
+              src="images/hero/IMG_5895.jpg"
+              alt="Dark developer workspace with keyboard lighting and coding interface glow"
+              loading="eager"
+              width="1536"
+              height="1024"
+            />
+
+            <div class="hero-card-bottom">
+              <div class="mini-metric">
+                <span class="mini-metric-label">Focus</span>
+                <span class="mini-metric-value">Production-ready</span>
+              </div>
+              <div class="mini-metric">
+                <span class="mini-metric-label">Delivery</span>
+                <span class="mini-metric-value">Milestone-based</span>
+              </div>
+              <div class="mini-metric">
+                <span class="mini-metric-label">Quality</span>
+                <span class="mini-metric-value">Polished + documented</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bg" aria-hidden="true"></div>
+    </section>
+
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Featured Work</h2>
+          <p class="section-subtitle">
+            A quick look at what we build. Each project is custom-scoped and delivered with clear handoff.
+          </p>
+        </div>
+
+        <div class="grid cards-3">
+          <article class="card">
+            <div class="card-media">
+              <img src="images/house_casual.png" alt="3D environment render" loading="lazy" width="900" height="600" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">3D Environments</h3>
+              <p class="card-text">Modular scenes, optimized assets, and clean topology—ready for Unity/Unreal.</p>
+              <div class="tag-row" aria-label="Tags">
+                <span class="tag">Blender</span><span class="tag">Optimization</span><span class="tag">PBR</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="images/game_dev.png" alt="Game UI or gameplay screenshot" loading="lazy" width="900" height="600" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Game Systems</h3>
+              <p class="card-text">Menus, settings, input, saving, and gameplay loops with scalable architecture.</p>
+              <div class="tag-row" aria-label="Tags">
+                <span class="tag">Unity</span><span class="tag">Unreal</span><span class="tag">UI/UX</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="images/example_website.png" alt="Web interface screenshot" loading="lazy" width="900" height="600" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Web & Software</h3>
+              <p class="card-text">Modern, responsive frontends and internal tools designed for reliability.</p>
+              <div class="tag-row" aria-label="Tags">
+                <span class="tag">Frontend</span><span class="tag">Security</span><span class="tag">Performance</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-actions">
+          <a class="btn btn-secondary" href="products.html">See Our Tool Stack</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Services</h2>
+          <p class="section-subtitle">Clear deliverables, clean handoff, and a process that keeps projects moving.</p>
+        </div>
+
+        <div class="grid cards-2">
+          <article class="service card">
+            <h3 class="card-title">Game Development</h3>
+            <p class="card-text">Prototyping to production: gameplay systems, menus, settings, co-op foundations, and tooling.</p>
+            <ul class="checklist">
+              <li>Unity / Unreal builds</li>
+              <li>UI, input, save/load</li>
+              <li>Performance-minded architecture</li>
+            </ul>
+          </article>
+
+          <article class="service card">
+            <h3 class="card-title">3D Modeling & Assets</h3>
+            <p class="card-text">Production-ready assets (non-character), modular kits, and optimized scene builds.</p>
+            <ul class="checklist">
+              <li>High-poly + game-ready</li>
+              <li>UVs, PBR materials</li>
+              <li>LOD/optimization options</li>
+            </ul>
+          </article>
+
+          <article class="service card">
+            <h3 class="card-title">Web Development</h3>
+            <p class="card-text">Responsive sites that look premium on desktop and mobile—fast, accessible, and modern.</p>
+            <ul class="checklist">
+              <li>Landing pages & portfolios</li>
+              <li>Brand-consistent design</li>
+              <li>Performance & accessibility</li>
+            </ul>
+          </article>
+
+          <article class="service card">
+            <h3 class="card-title">Software Engineering</h3>
+            <p class="card-text">Internal tools, automation, and secure data flows with professional documentation.</p>
+            <ul class="checklist">
+              <li>Local apps & utilities</li>
+              <li>Data handling & encryption options</li>
+              <li>Maintenance & support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Process</h2>
+          <p class="section-subtitle">No confusion. No drifting scope. Clear steps from intake to delivery.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">01</span>
+            <div>
+              <h3 class="step-title">Intake & Scope</h3>
+              <p class="step-text">We define your goals, deliverables, timeline, and constraints.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <div>
+              <h3 class="step-title">Estimate & Agreement</h3>
+              <p class="step-text">Transparent milestones, revision policy, and a clear plan to ship.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <div>
+              <h3 class="step-title">Build & Check-ins</h3>
+              <p class="step-text">Regular updates, staged delivery, and professional documentation.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-num">04</span>
+            <div>
+              <h3 class="step-title">Delivery & Support</h3>
+              <p class="step-text">Clean handoff, organized files, and optional ongoing support.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="location" class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Location & Hours</h2>
+          <p class="section-subtitle">Based in New Hampshire. Remote-friendly for clients anywhere.</p>
+        </div>
+
+        <div class="grid location-grid">
+          <div class="card location-card">
+            <h3 class="card-title">Map</h3>
+
+            <div class="map-frame" role="group" aria-label="Map showing our location">
+              <iframe
+                title="Twin Unified Studios location map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=New%20Hampshire%20USA&output=embed">
+              </iframe>
+            </div>
+
+            <p class="muted">
+              *Exact address shared after project intake if needed.
+            </p>
+          </div>
+
+          <div class="card hours-card">
+            <div class="hours-head">
+              <h3 class="card-title">Business Hours</h3>
+              <div class="status-pill" data-open-status aria-live="polite">
+                <span class="dot" aria-hidden="true"></span>
+                <span class="status-text">Checking…</span>
+              </div>
+            </div>
+
+            <div class="hours-meta">
+              <div class="hours-meta-item">
+                <span class="hours-label">Live Local time (ET)</span>
+                <span class="hours-value" data-local-time>—</span>
+              </div>
+              <div class="hours-meta-item">
+                <span class="hours-label">Time zone</span>
+                <span class="hours-value">America/New_York</span>
+              </div>
+            </div>
+
+            <div class="hours-table" role="table" aria-label="Business hours">
+              <div class="hours-row" role="row">
+                <span role="cell">Monday</span><span role="cell">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row" role="row">
+                <span role="cell">Tuesday</span><span role="cell">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row" role="row">
+                <span role="cell">Wednesday</span><span role="cell">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row" role="row">
+                <span role="cell">Thursday</span><span role="cell">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row" role="row">
+                <span role="cell">Friday</span><span role="cell">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row" role="row">
+                <span role="cell">Saturday</span><span role="cell">Closed</span>
+              </div>
+              <div class="hours-row" role="row">
+                <span role="cell">Sunday</span><span role="cell">Closed</span>
+              </div>
+            </div>
+
+            <p class="muted">
+              We’re flexible for scheduled calls outside hours when needed. We are closed on major holidays.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Tell us what you’re building. We’ll respond with next steps and a scoped plan.</p>
+        </div>
+
+        <div class="grid contact-grid">
+          <form class="card form" action="https://formsubmit.co/info@twinunifiedstudios.com" method="post">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="field">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="" selected disabled>Select one…</option>
+                <option>Game Development</option>
+                <option>3D Modeling / Assets</option>
+                <option>Web Development</option>
+                <option>Software Engineering</option>
+                <option>Graphic Design</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="details">Project details</label>
+              <textarea id="details" name="details" rows="6" placeholder="Scope, timeline, references, and what success looks like…" required></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send</button>
+
+            <p class="fineprint form-submit-note">
+              We only work with clients who are 18+. If the form does not submit, please contact us directly by email.
+            </p>
+          </form>
+
+          <aside class="card contact-aside">
+            <h3 class="card-title">What happens next</h3>
+            <ul class="checklist">
+              <li>We review your request and reply within 24–48 hours.</li>
+              <li>We confirm scope, deliverables, and timeline.</li>
+              <li>You receive a clear plan with milestone options.</li>
+            </ul>
+
+            <div class="contact-cta">
+              <p class="muted">Prefer email?</p>
+              <a class="btn btn-secondary" href="mailto:info@twinunifiedstudios.com">info@twinunifiedstudios.com</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="muted">Game development • 3D • software • design</p>
+      </div>
+
+      <div class="footer-right">
+        <a class="footer-link" href="https://www.cgtrader.com/designers/twinunifiedstudios" target="_blank" rel="noreferrer">CGTrader</a>
+        <a class="footer-link" href="#contact">Contact</a>
+        <a class="footer-link" href="#location">Location</a>
+        <a class="footer-link" href="privacypolicy.html">Privacy Policy</a>
+        <a class="footer-link" href="tos.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=1" defer></script>
+
+</body>
+</html>

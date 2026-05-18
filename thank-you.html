@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+
+  <title>Thank You | Twin Unified Studios</title>
+  <meta name="description" content="Your message has been sent to Twin Unified Studios." />
+
+  <link rel="stylesheet" href="style.css?v=2" />
+
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const initial = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", initial);
+        document.documentElement.style.colorScheme = initial;
+      } catch (e) {}
+      document.documentElement.classList.remove("no-js");
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img
+          class="brand-logo brand-logo--full theme-logo"
+          src="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+          data-logo-light="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+          data-logo-dark="images/logo_kit/TwinUnifiedStudios_logo_white.png"
+          alt="Twin Unified Studios"
+        />
+      </a>
+
+      <nav class="nav">
+        <button class="nav-toggle" type="button" aria-expanded="false">
+          <span class="nav-toggle-label">Menu</span>
+          <span class="nav-toggle-icon"></span>
+        </button>
+
+        <div class="nav-menu">
+          <a class="nav-link" href="index.html#work">Work</a>
+          <a class="nav-link" href="index.html#services">Services</a>
+          <a class="nav-link" href="index.html#process">Process</a>
+          <a class="nav-link" href="index.html#location">Location</a>
+          <a class="nav-link" href="products.html">Tools</a>
+          <a class="nav-link" href="apphomepage.html">InvoBaseOS</a>
+
+          <button class="theme-toggle" id="themeToggle">
+            <span class="theme-emoji theme-emoji-moon">🌙</span>
+            <span class="theme-emoji theme-emoji-sun">☀️</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="text-align: center; max-width: 700px;">
+        
+        <h1 class="section-title">Thank You</h1>
+
+        <p class="section-subtitle" style="margin-top: 16px;">
+          Your message has been successfully sent.
+          We’ll review your request and get back to you within 24–48 hours.
+        </p>
+
+        <div style="margin-top: 32px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="index.html">Back to Home</a>
+          <a class="btn btn-secondary" href="privacypolicy.html">Privacy Policy</a>
+          <a class="btn btn-secondary" href="tos.html">Terms of Service</a>
+        </div>
+
+        <p class="muted" style="margin-top: 24px;">
+          If your request is urgent, feel free to email us directly at info@twinunifiedstudios.com
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p class="muted">
+        © 2026 Twin Unified Studios LLC. All rights reserved.
+      </p>
+      <p class="muted" style="font-size: 12px; margin-top: 6px;">
+        All content, software, branding, and intellectual property on this site,
+        including InvoBaseOS, are the exclusive property of Twin Unified Studios LLC
+        and may not be copied, reproduced, or redistributed without written permission.
+      </p>
+    </div>
+
+    <div class="footer-right">
+      <a class="footer-link" href="index.html">Home</a>
+      <a class="footer-link" href="privacypolicy.html">Privacy Policy</a>
+      <a class="footer-link" href="tos.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+  <script src="script.js?v=1" defer></script>
+</body>
+</html>

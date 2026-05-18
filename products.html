@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+
+  <title>Tools We Use | Twin Unified Studios</title>
+  <meta
+    name="description"
+    content="Explore the software and platforms Twin Unified Studios uses across game development, 3D production, design, and software engineering."
+  />
+
+  <meta property="og:title" content="Tools We Use | Twin Unified Studios" />
+  <meta
+    property="og:description"
+    content="A look at the tools Twin Unified Studios uses for game development, 3D, design, and engineering."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css?v=2" />
+
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const initial = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", initial);
+        document.documentElement.style.colorScheme = initial;
+      } catch (e) {}
+      document.documentElement.classList.remove("no-js");
+    })();
+  </script>
+
+  <style>
+    .tools-page {
+      padding: var(--s-9) 0 var(--s-8);
+    }
+
+    .tools-hero {
+      display: grid;
+      gap: var(--s-4);
+      margin-bottom: var(--s-7);
+      max-width: 780px;
+    }
+
+    .tools-hero .eyebrow {
+      width: fit-content;
+    }
+
+    .tools-hero-title {
+      margin: 0;
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    .tools-hero-subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 68ch;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--s-5);
+    }
+
+    .tool-card {
+      display: grid;
+      gap: var(--s-4);
+      padding: var(--s-6);
+      border: 1px solid var(--border);
+      border-radius: var(--r-3);
+      background: var(--card);
+      backdrop-filter: blur(var(--blur));
+      box-shadow: var(--shadow-soft);
+      transition:
+        transform var(--dur-1) var(--ease),
+        border-color var(--dur-2) var(--ease),
+        box-shadow var(--dur-2) var(--ease);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      border-color: rgb(var(--accent) / 0.28);
+      box-shadow: var(--shadow);
+    }
+
+    .tool-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--s-4);
+    }
+
+    .tool-copy {
+      display: grid;
+      gap: var(--s-3);
+      min-width: 0;
+    }
+
+    .tool-title {
+      margin: 0;
+      font-size: 1.3rem;
+      line-height: 1.1;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .tool-desc {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+
+    .tool-logo-box {
+      flex: 0 0 auto;
+      width: 116px;
+      height: 116px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg-2) 78%, transparent);
+      box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.04);
+      overflow: hidden;
+    }
+
+    .tool-logo {
+      display: block;
+      max-width: 100%;
+      max-height: 72px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Keep official logos clean: no transforms, filters, recolors */
+    .tool-logo-box .tool-logo,
+    .tool-logo-box .theme-logo {
+      transform: none !important;
+      filter: none !important;
+      mix-blend-mode: normal !important;
+    }
+
+    .tool-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+    }
+
+    .tool-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--muted);
+      background: rgb(var(--accent) / 0.05);
+      border: 1px solid rgb(var(--accent) / 0.14);
+    }
+
+    .tool-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      align-items: center;
+    }
+
+    .tool-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgb(var(--accent) / 0.22);
+      background: rgb(var(--accent) / 0.08);
+      color: var(--text);
+      font-weight: 800;
+      transition:
+        transform var(--dur-1) var(--ease),
+        background var(--dur-2) var(--ease),
+        border-color var(--dur-2) var(--ease);
+    }
+
+    .tool-link:hover {
+      transform: translateY(-1px);
+      background: rgb(var(--accent) / 0.12);
+      border-color: rgb(var(--accent) / 0.3);
+    }
+
+    .tools-note {
+      margin-top: var(--s-7);
+      padding: var(--s-5);
+      border-radius: var(--r-3);
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg-2) 78%, transparent);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .tools-note strong {
+      color: var(--text);
+    }
+
+    @media (max-width: 980px) {
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .tools-page {
+        padding: var(--s-7) 0 var(--s-6);
+      }
+
+      .tool-card {
+        padding: var(--s-5);
+      }
+
+      .tool-card-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .tool-logo-box {
+        width: 100%;
+        min-height: 96px;
+        height: auto;
+      }
+
+      .tool-logo {
+        max-height: 58px;
+      }
+
+      .tool-actions,
+      .tool-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand brand--wordmark" href="index.html" aria-label="Twin Unified Studios Home">
+        <img
+          class="brand-logo brand-logo--full theme-logo"
+          src="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+          data-logo-light="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+          data-logo-dark="images/logo_kit/TwinUnifiedStudios_logo_white.png"
+          alt="Twin Unified Studios"
+          width="260"
+          height="90"
+        />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-label">Menu</span>
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <div id="navMenu" class="nav-menu" data-nav-menu>
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="index.html#work">Work</a>
+          <a class="nav-link" href="index.html#services">Services</a>
+          <a class="nav-link" href="apphomepage.html">InvoBaseOS</a>
+          <a class="nav-link nav-link--cta" href="#main">Tools</a>
+
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="theme-emoji theme-emoji-moon">🌙</span>
+            <span class="theme-emoji theme-emoji-sun">☀️</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="tools-page">
+    <div class="container">
+      <section class="tools-hero" aria-label="Tools intro">
+        <p class="eyebrow">Tools • Workflow • Production</p>
+        <h1 class="tools-hero-title">The tools we trust to build games, assets, software, and design systems.</h1>
+        <p class="tools-hero-subtitle">
+          Twin Unified Studios uses a focused production stack across development, 3D, design, and engineering.
+          The logos below are displayed for identification only and remain the property of their respective owners.
+        </p>
+      </section>
+
+      <section class="tools-grid" aria-label="Tools we use">
+        <article class="tool-card">
+          <div class="tool-card-top">
+            <div class="tool-copy">
+              <h2 class="tool-title">Adobe Products</h2>
+              <p class="tool-desc">
+                We use Adobe products—primarily Photoshop and Illustrator—for concept art, UI/UX design,
+                brand materials, layout work, and polished visual presentation.
+              </p>
+            </div>
+
+            <div class="tool-logo-box">
+              <img
+                src="images/product_kit/Adobe_logo.webp"
+                alt="Adobe logo"
+                class="tool-logo"
+              />
+            </div>
+          </div>
+
+          <div class="tool-meta">
+            <span class="tool-tag">Design</span>
+            <span class="tool-tag">Branding</span>
+            <span class="tool-tag">UI/UX</span>
+          </div>
+
+          <div class="tool-actions">
+            <a class="tool-link" href="https://www.adobe.com" target="_blank" rel="noopener noreferrer">Visit Adobe</a>
+          </div>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-card-top">
+            <div class="tool-copy">
+              <h2 class="tool-title">Blender</h2>
+              <p class="tool-desc">
+                Blender is a core part of our 3D workflow for modeling, asset production, environment work,
+                rendering, and visual development across both internal and client projects.
+              </p>
+            </div>
+
+            <div class="tool-logo-box">
+              <img
+                src="images/product_kit/blender_logo.png"
+                alt="Blender logo"
+                class="tool-logo"
+              />
+            </div>
+          </div>
+
+          <div class="tool-meta">
+            <span class="tool-tag">3D Modeling</span>
+            <span class="tool-tag">Rendering</span>
+            <span class="tool-tag">Assets</span>
+          </div>
+
+          <div class="tool-actions">
+            <a class="tool-link" href="https://www.blender.org/" target="_blank" rel="noopener noreferrer">Visit Blender</a>
+          </div>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-card-top">
+            <div class="tool-copy">
+              <h2 class="tool-title">Clip Studio Paint</h2>
+              <p class="tool-desc">
+                We use Clip Studio Paint for digital illustration, concept development, visual ideation,
+                supporting art tasks, and select mockup workflows.
+              </p>
+            </div>
+
+            <div class="tool-logo-box">
+              <img
+                class="tool-logo theme-logo"
+                src="images/product_kit/csp_main_logo_black.png"
+                data-logo-light="images/product_kit/csp_main_logo_white.png"
+                data-logo-dark="images/product_kit/csp_main_logo_black.png"
+                alt="Clip Studio Paint logo"
+              />
+            </div>
+          </div>
+
+          <div class="tool-meta">
+            <span class="tool-tag">Illustration</span>
+            <span class="tool-tag">Concept Work</span>
+            <span class="tool-tag">Mockups</span>
+          </div>
+
+          <div class="tool-actions">
+            <a class="tool-link" href="https://www.clipstudio.net/en/" target="_blank" rel="noopener noreferrer">Visit Clip Studio Paint</a>
+          </div>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-card-top">
+            <div class="tool-copy">
+              <h2 class="tool-title">Unity</h2>
+              <p class="tool-desc">
+                Unity supports our game development workflow for prototyping, interface work, scalable systems,
+                interaction logic, and cross-platform builds.
+              </p>
+            </div>
+
+            <div class="tool-logo-box">
+              <img
+                class="tool-logo theme-logo"
+                src="images/product_kit/U_Logo_Small_Black_CMYK_1C-1589x537-ada00fa.png"
+                data-logo-light="images/product_kit/U_Logo_Small_Black_CMYK_1C-1589x537-ada00fa.png"
+                data-logo-dark="images/product_kit/U_Logo_Small_White_CMYK_1C-1589x537-ada00fa.png"
+                alt="Unity logo"
+              />
+            </div>
+          </div>
+
+          <div class="tool-meta">
+            <span class="tool-tag">Game Dev</span>
+            <span class="tool-tag">Prototyping</span>
+            <span class="tool-tag">Cross-Platform</span>
+          </div>
+
+          <div class="tool-actions">
+            <a class="tool-link" href="https://unity.com/" target="_blank" rel="noopener noreferrer">Visit Unity</a>
+          </div>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-card-top">
+            <div class="tool-copy">
+              <h2 class="tool-title">Unreal Engine</h2>
+              <p class="tool-desc">
+                Unreal Engine supports our work in immersive real-time 3D, cinematic presentation,
+                higher-fidelity environments, and interactive experiences.
+              </p>
+            </div>
+
+            <div class="tool-logo-box">
+              <img
+                class="tool-logo theme-logo"
+                src="images/product_kit/UE-Logotype-2023-Vertical-Black.png"
+                data-logo-light="images/product_kit/UE-Logotype-2023-Vertical-Black.png"
+                data-logo-dark="images/product_kit/UE-Logotype-2023-Vertical-White.png"
+                alt="Unreal Engine logo"
+              />
+            </div>
+          </div>
+
+          <div class="tool-meta">
+            <span class="tool-tag">Real-Time 3D</span>
+            <span class="tool-tag">Cinematics</span>
+            <span class="tool-tag">Interactive Environments</span>
+          </div>
+
+          <div class="tool-actions">
+            <a class="tool-link" href="https://www.unrealengine.com/" target="_blank" rel="noopener noreferrer">Visit Unreal Engine</a>
+          </div>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-card-top">
+            <div class="tool-copy">
+              <h2 class="tool-title">Visual Studio Code</h2>
+              <p class="tool-desc">
+                Visual Studio Code is our primary editor for web development, software engineering,
+                automation, and general production support work.
+              </p>
+            </div>
+
+            <div class="tool-logo-box">
+              <img
+                src="images/product_kit/vscode.png"
+                alt="Visual Studio Code logo"
+                class="tool-logo"
+              />
+            </div>
+          </div>
+
+          <div class="tool-meta">
+            <span class="tool-tag">Code</span>
+            <span class="tool-tag">Web</span>
+            <span class="tool-tag">Software</span>
+          </div>
+
+          <div class="tool-actions">
+            <a class="tool-link" href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visit VS Code</a>
+          </div>
+        </article>
+      </section>
+
+      <div class="tools-note">
+        <strong>Notice:</strong> All product names, brand marks, and logos shown on this page belong to their respective owners.
+        They are shown only to identify the software and platforms used in our workflow. Twin Unified Studios LLC does not claim ownership of any third-party marks shown here.
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="muted">Game development • 3D • software • design</p>
+      </div>
+
+      <div class="footer-right">
+        <a class="footer-link" href="index.html">Home</a>
+        <a class="footer-link" href="index.html#work">Work</a>
+        <a class="footer-link" href="index.html#contact">Contact</a>
+        <a class="footer-link" href="privacypolicy.html">Privacy Policy</a>
+        <a class="footer-link" href="tos.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=1" defer></script>
+</body>
+</html>

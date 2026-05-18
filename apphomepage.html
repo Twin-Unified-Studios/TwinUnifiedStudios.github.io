@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+
+  <title>InvoBaseOS | Secure Offline Invoicing for iPad</title>
+  <meta
+    name="description"
+    content="InvoBaseOS is a secure, offline-capable invoicing app for iPad by Twin Unified Studios LLC. Built for freelancers, independent professionals, and business users who want privacy, simplicity, and local control."
+  />
+
+  <meta property="og:title" content="InvoBaseOS" />
+  <meta
+    property="og:description"
+    content="Secure offline-capable invoicing for iPad by Twin Unified Studios LLC."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css?v=2" />
+
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const initial = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", initial);
+        document.documentElement.style.colorScheme = initial;
+      } catch (e) {}
+      document.documentElement.classList.remove("no-js");
+    })();
+  </script>
+
+  <style>
+    :root {
+      --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+      --bg: #06070b;
+      --text: #f5f7fb;
+      --muted: rgba(245, 247, 251, 0.72);
+      --border: rgba(255, 255, 255, 0.10);
+      --border-strong: rgba(255, 255, 255, 0.18);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+      --accent: 159 194 255;
+      --accent-hex: #9fc2ff;
+
+      --container: 1180px;
+      --r-xl: 32px;
+      --r-lg: 26px;
+      --r-md: 20px;
+    }
+
+    :root[data-theme="light"] {
+      --bg: #f5f7fb;
+      --text: #111827;
+      --muted: rgba(17, 24, 39, 0.72);
+      --border: rgba(17, 24, 39, 0.12);
+      --border-strong: rgba(17, 24, 39, 0.20);
+      --shadow: 0 18px 48px rgba(17, 24, 39, 0.12);
+      --accent: 52 105 206;
+      --accent-hex: #3469ce;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--text);
+      background:
+        radial-gradient(900px 520px at 10% -10%, rgba(159, 194, 255, 0.14), transparent 60%),
+        radial-gradient(800px 500px at 90% 0%, rgba(255, 255, 255, 0.05), transparent 60%),
+        linear-gradient(180deg, #05060a, #090b11 32%, #06070b 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    :root[data-theme="light"] body {
+      background:
+        radial-gradient(900px 520px at 10% -10%, rgba(52, 105, 206, 0.12), transparent 60%),
+        radial-gradient(800px 500px at 90% 0%, rgba(17, 24, 39, 0.05), transparent 60%),
+        linear-gradient(180deg, #ffffff, #f5f7fb 38%, #eef2f7 100%);
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    p { margin: 0; line-height: 1.6; }
+    h1, h2, h3 { margin: 0; letter-spacing: -0.03em; }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 10, 15, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    :root[data-theme="light"] .site-header {
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      font-size: 1rem;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      height: 42px;
+      width: auto;
+      display: block;
+      flex: 0 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+
+    .nav-toggle-label {
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .nav-toggle-icon {
+      width: 18px;
+      height: 12px;
+      position: relative;
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+    }
+
+    .nav-toggle-icon::before { top: 0; }
+    .nav-toggle-icon::after { bottom: 0; }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+      border-color: var(--border);
+      outline: none;
+    }
+
+    .nav-link--cta {
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+      border-color: var(--border-strong);
+    }
+
+    :root[data-theme="light"] .nav-link:hover,
+    :root[data-theme="light"] .nav-link:focus-visible {
+      background: rgba(52, 105, 206, 0.08);
+    }
+
+    :root[data-theme="light"] .nav-link--cta {
+      background: rgba(52, 105, 206, 0.10);
+    }
+
+    .theme-toggle {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+      flex: 0 0 auto;
+    }
+
+    .theme-toggle:hover {
+      border-color: rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.05);
+    }
+
+    :root[data-theme="light"] .theme-toggle:hover {
+      border-color: rgba(52, 105, 206, 0.26);
+      background: rgba(52, 105, 206, 0.08);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+
+    .theme-emoji {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 1.35rem;
+      height: 1.35rem;
+      font-size: 1.35rem;
+      line-height: 1;
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: center;
+      pointer-events: none;
+      transition: transform 400ms ease, opacity 300ms ease;
+    }
+
+    .theme-emoji-moon {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    .theme-emoji-sun {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.6);
+    }
+
+    :root[data-theme="light"] .theme-emoji-moon {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.6);
+    }
+
+    :root[data-theme="light"] .theme-emoji-sun {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    .hero,
+    .section {
+      padding: 72px 0;
+    }
+
+    .hero {
+      padding-bottom: 34px;
+    }
+
+    .hero-grid,
+    .split-panel {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .apple-eyebrow {
+      color: #dbe7ff;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    :root[data-theme="light"] .eyebrow,
+    :root[data-theme="light"] .section-kicker,
+    :root[data-theme="light"] .apple-eyebrow {
+      color: var(--accent-hex);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+
+    .hero-title {
+      margin-top: 18px;
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      line-height: 0.95;
+      max-width: 11ch;
+    }
+
+    .hero-subtitle,
+    .section-subtitle,
+    .trust-text,
+    .feature-text,
+    .legal-copy,
+    .hero-card-subtext,
+    .hero-note,
+    .apple-point p:last-child,
+    .info-panel p,
+    .info-panel li,
+    .footer-copy {
+      color: var(--muted);
+    }
+
+    .hero-subtitle {
+      margin-top: 22px;
+      max-width: 62ch;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions,
+    .store-row,
+    .footer-nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions { margin-top: 28px; }
+    .store-row { margin-top: 18px; }
+
+    .btn,
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .btn:hover,
+    .store-btn:hover { transform: translateY(-1px); }
+
+    .store-btn--soon {
+      cursor: default;
+    }
+
+    .store-btn--soon:hover {
+      transform: none;
+    }
+
+    .btn-primary {
+      color: #08101d;
+      background: linear-gradient(180deg, #dfeaff, #a8c8ff);
+      box-shadow: 0 14px 30px rgba(134, 183, 255, 0.18);
+    }
+
+    .btn-secondary,
+    .store-btn {
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+      border-color: var(--border-strong);
+    }
+
+    :root[data-theme="light"] .btn-secondary,
+    :root[data-theme="light"] .store-btn {
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .store-btn {
+      min-width: 220px;
+      min-height: 74px;
+      padding: 12px 24px;
+      border-radius: 18px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .store-btn small {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .store-btn span {
+      font-size: 1.12rem;
+      font-weight: 700;
+    }
+
+    .store-btn em {
+      color: var(--accent-hex);
+      font-size: 0.72rem;
+      font-style: normal;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-card,
+    .trust-card,
+    .feature-card,
+    .info-panel,
+    .apple-point,
+    .legal-footer {
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow);
+    }
+
+    :root[data-theme="light"] .hero-card,
+    :root[data-theme="light"] .trust-card,
+    :root[data-theme="light"] .feature-card,
+    :root[data-theme="light"] .info-panel,
+    :root[data-theme="light"] .apple-point,
+    :root[data-theme="light"] .legal-footer {
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.68));
+      border-color: rgba(17, 24, 39, 0.10);
+    }
+
+    .hero-card {
+      padding: 24px;
+      border-radius: var(--r-xl);
+    }
+
+    .hero-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card-label,
+    .trust-title,
+    .feature-title,
+    .info-panel h3,
+    .legal-title {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .hero-card-label { font-size: 1rem; }
+
+    .screenshot-frame {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.02);
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+    }
+
+    :root[data-theme="light"] .screenshot-frame {
+      border-color: rgba(17, 24, 39, 0.10);
+      background: rgba(255,255,255,0.58);
+    }
+
+    .screenshot-placeholder {
+      width: 100%;
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+        radial-gradient(circle at center, rgba(159, 194, 255, 0.10), transparent 60%);
+    }
+
+    :root[data-theme="light"] .screenshot-placeholder {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.80), rgba(255,255,255,0.54)),
+        radial-gradient(circle at center, rgba(52, 105, 206, 0.10), transparent 60%);
+    }
+
+    .screenshot-placeholder strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-trust { padding: 18px 0 6px; }
+
+    .hero-trust-grid,
+    .feature-grid,
+    .apple-points {
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-trust-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .feature-grid,
+    .apple-points {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .trust-card,
+    .feature-card,
+    .info-panel,
+    .apple-point {
+      padding: 24px;
+      border-radius: 26px;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    :root[data-theme="light"] .feature-icon {
+      background: rgba(52, 105, 206, 0.08);
+      border-color: rgba(52, 105, 206, 0.16);
+    }
+
+    .feature-title { margin-top: 18px; font-size: 1.15rem; }
+    .feature-text { margin-top: 10px; font-size: 0.97rem; }
+
+    .section-head {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+      max-width: 760px;
+    }
+
+    .section-kicker { font-size: 0.9rem; }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.02;
+    }
+    .section-subtitle { font-size: 1.02rem; }
+
+    .info-panel {
+      border-radius: 28px;
+    }
+
+    .info-panel h3 {
+      font-size: 1.3rem;
+    }
+
+    .info-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .info-disclaimer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .info-list li {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .info-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .app-selling-points { padding-top: 0; }
+
+    .apple-point {
+      border-radius: 30px;
+      padding: 28px;
+    }
+
+    .apple-point--wide {
+      grid-column: span 2;
+    }
+
+    .apple-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .apple-point h3 {
+      font-size: clamp(1.35rem, 2vw, 2rem);
+      line-height: 1.05;
+    }
+
+    .apple-point p:last-child {
+      margin-top: 14px;
+      font-size: 0.98rem;
+      max-width: 54ch;
+    }
+
+    .legal-footer-wrap {
+      padding: 24px 0 42px;
+    }
+
+    .legal-footer {
+      border-radius: 28px;
+      padding: 24px 26px;
+    }
+
+    .legal-title {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .legal-copy + .legal-copy {
+      margin-top: 12px;
+    }
+
+    .site-footer {
+      padding: 0 0 42px;
+      background: transparent;
+      border-top: 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      width: 100%;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .footer-nav {
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .split-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid,
+      .hero-trust-grid,
+      .apple-points {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .apple-point--wide {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .header-inner {
+        min-height: 72px;
+        padding: 12px 0;
+        gap: 12px;
+      }
+
+      .brand {
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand span {
+        font-size: 0.98rem;
+      }
+
+      .nav {
+        position: relative;
+        margin-left: auto;
+        flex-wrap: nowrap;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        position: relative;
+        z-index: 101;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        left: auto;
+        width: min(320px, calc(100vw - 40px));
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 8px;
+        padding: 16px;
+
+        border-radius: 22px;
+        border: 1px solid var(--border);
+        background: rgba(8, 10, 15, 0.96);
+        backdrop-filter: blur(16px);
+        box-shadow: var(--shadow);
+        z-index: 100;
+      }
+
+      :root[data-theme="light"] .nav-menu {
+        background: rgba(255, 255, 255, 0.96);
+      }
+
+      body.nav-open .nav-menu {
+        display: flex;
+      }
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 48px;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text);
+        border-radius: 14px;
+      }
+
+      .theme-toggle {
+        margin-top: 4px;
+        align-self: center;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .feature-grid,
+      .hero-trust-grid,
+      .apple-points,
+      .split-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .apple-point--wide {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(var(--container), calc(100% - 20px));
+      }
+
+      .hero-title {
+        font-size: 2.55rem;
+        max-width: none;
+      }
+
+      .hero-actions,
+      .store-row,
+      .footer-nav {
+        flex-direction: column;
+      }
+
+      .btn,
+      .store-btn {
+        width: 100%;
+      }
+
+      .hero-card,
+      .trust-card,
+      .feature-card,
+      .info-panel,
+      .apple-point,
+      .legal-footer {
+        padding: 20px;
+      }
+
+      .screenshot-placeholder {
+        min-height: 300px;
+      }
+
+      .footer-inner {
+        align-items: center;
+      }
+
+      .brand-logo {
+        height: 42px;
+        width: auto;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Back to Twin Unified Studios LLC">
+        <img src="images/logo_kit/App Icon TWUSLock_iOSApp.png" alt="InvoBaseOS logo" class="brand-logo">
+        <span>InvoBaseOS</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-label">Menu</span>
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <div id="navMenu" class="nav-menu" data-nav-menu>
+          <a class="nav-link" href="index.html">Back to Main Site</a>
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#security">Security</a>
+          <a class="nav-link" href="#screenshots">Screenshots</a>
+          <a class="nav-link nav-link--cta" href="#launch">App Store</a>
+
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="theme-emoji theme-emoji-moon">🌙</span>
+            <span class="theme-emoji theme-emoji-sun">☀️</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Offline-capable invoicing for iPad</p>
+          <h1 class="hero-title">InvoBaseOS keeps invoicing private, local, and clean.</h1>
+          <p class="hero-subtitle">
+            InvoBaseOS is an Apple-inspired invoicing app for iPad, developed by Twin Unified Studios LLC. It is designed for freelancers first, while staying flexible enough for broader business use. The experience focuses on offline capability, encryption-based protection, and a calm interface built for everyday work.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#screenshots">View screenshots</a>
+            <a class="btn btn-secondary" href="#features">Explore features</a>
+          </div>
+
+          <div class="store-row" id="launch">
+            <div class="store-btn store-btn--soon" role="status" aria-label="App Store coming soon">
+              <small>Download on the</small>
+              <span>App Store</span>
+              <em>Coming soon</em>
+            </div>
+            <div class="store-btn store-btn--soon" role="status" aria-label="TestFlight coming soon">
+              <small>Join the beta on</small>
+              <span>TestFlight</span>
+              <em>Coming soon</em>
+            </div>
+          </div>
+
+          <p class="hero-note">
+            <strong>Status:</strong> InvoBaseOS is currently in beta and being prepared for launch.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-head">
+            <div>
+              <div class="hero-card-label">InvoBaseOS for iPad</div>
+              <div class="hero-card-subtext"></div>
+            </div>
+          </div>
+
+          <div class="screenshot-frame">
+            <div class="screenshot-placeholder">
+              <div>
+                <strong>InvoBaseOS Login Screen</strong>
+                <img src="images/Screenshots/IMG_0032.PNG" alt="Invobase Log In Screen">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-trust">
+      <div class="container hero-trust-grid">
+        <article class="trust-card">
+          <h2 class="trust-title">Offline-capable</h2>
+          <p class="trust-text">Built so the app can remain useful even when a constant connection is not available.</p>
+        </article>
+        <article class="trust-card">
+          <h2 class="trust-title">Encryption-based direction</h2>
+          <p class="trust-text">Shaped around protecting invoice-related business information through a privacy-minded design direction.</p>
+        </article>
+        <article class="trust-card">
+          <h2 class="trust-title">Apple-inspired aesthetic</h2>
+          <p class="trust-text">Clean surfaces, calm spacing, and a polished interface designed to feel simple and premium.</p>
+        </article>
+        <article class="trust-card">
+          <h2 class="trust-title">Freelancer-first</h2>
+          <p class="trust-text">Tailored for freelancers while still being broad enough for consultants, studios, and other business users.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Core features</span>
+          <h2 class="section-title">Designed to feel calm, focused, and business-ready.</h2>
+          <p class="section-subtitle">InvoBaseOS is intended to reduce friction, keep invoice work organized, and give users a cleaner business tool built around local control.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">01</div>
+            <h3 class="feature-title">Invoice-first workflow</h3>
+            <p class="feature-text">Built around invoicing as the core task, with a focused experience instead of a bloated business dashboard.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">02</div>
+            <h3 class="feature-title">Local business control</h3>
+            <p class="feature-text">Designed to feel direct and dependable, with an emphasis on keeping the workflow close to the user.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">03</div>
+            <h3 class="feature-title">Clear visual structure</h3>
+            <p class="feature-text">Strong readability, thoughtful spacing, and a premium layout direction inspired by modern Apple UI design.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">04</div>
+            <h3 class="feature-title">Freelancer-oriented design</h3>
+            <p class="feature-text">Especially useful for independent professionals who want a more private and lightweight invoicing workflow.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">05</div>
+            <h3 class="feature-title">Offline-capable use</h3>
+            <p class="feature-text">Supports a more flexible workflow for users who do not want to rely entirely on cloud access while working.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">06</div>
+            <h3 class="feature-title">Everyday business usability</h3>
+            <p class="feature-text">Meant to be simple enough to return to daily without noise, confusion, or unnecessary overhead.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="security" class="section">
+      <div class="container split-panel">
+        <article class="info-panel">
+          <h3>Security and privacy direction</h3>
+          <p style="margin-top: 14px;">InvoBaseOS is being shaped around privacy-minded business use. The design direction centers on local ownership, encryption-based protection, and minimizing unnecessary reliance on outside systems.</p>
+          <ul class="info-list">
+            <li>Privacy-focused direction for handling invoice-related business data</li>
+            <li>Local-first structure intended to support stronger user control</li>
+            <li>Professional interface without visual clutter or unnecessary complexity</li>
+            <li>Offline-first workflow designed to reduce dependency on constant internet access</li>
+          </ul>
+        </article>
+
+        <article class="info-panel">
+        <h3>Pay Once for the Core App</h3>
+          <p style="margin-top: 14px;">
+            InvoBaseOS is designed around an offline-first workflow, giving businesses a professional invoicing experience without requiring a recurring subscription for core functionality.
+          </p>
+        <ul class="info-list">
+          <li>One-time purchase for the core app</li>
+          <li>Works offline without requiring constant internet access</li>
+          <li>Designed exclusively for iPad</li>
+          <li>Built for small businesses, freelancers, and independent creators</li>
+        </ul>
+              <p class="info-disclaimer">
+                Cloud services may be offered in the future, but InvoBaseOS is being designed to remain fully functional around local ownership and offline-first workflows.
+              </p>
+      </article>
+            </div>
+    </section>
+
+    <section id="screenshots" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Screenshots</span>
+          <h2 class="section-title">InvoBaseOS App Showcase</h2>
+          <p class="section-subtitle">Showcasing the InvoBaseOS features and abilities in the app.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="screenshot-placeholder">
+              <div>
+                <strong>Dashboard</strong>
+                <img src="images/Screenshots/IMG_0034.PNG" alt="InvobaseOS User Dashboard">
+              </div>
+            </div>
+          </article>
+          <article class="feature-card">
+            <div class="screenshot-placeholder">
+              <div>
+                <strong>Secured Re-Authentication</strong>
+                <img src="images/Screenshots/Screenshot_2026-04-10_at_9.07.36_PM.png" alt="InvobaseOS Invoice List">
+              </div>
+            </div>
+          </article>
+          <article class="feature-card">
+            <div class="screenshot-placeholder">
+              <div>
+                <strong>Settings Screen</strong>
+                <img src="images/Screenshots/Screenshot_2026-04-10_at 9.04.14_PM.png" alt="InvoBaseOS Settings Screenshot">
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-selling-points section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Why it stands apart</span>
+          <h2 class="section-title">A quieter, stricter, more trustworthy way to handle invoicing.</h2>
+          <p class="section-subtitle">InvoBaseOS is not trying to be everything at once. It is designed to feel focused, controlled, and reassuring, especially for people who care about privacy, accountability, and a smoother day-to-day workflow.</p>
+        </div>
+
+        <div class="apple-points">
+          <article class="apple-point apple-point--wide">
+            <p class="apple-eyebrow">Ownership hierarchy</p>
+            <h3>One true owner. Clear layers below.</h3>
+            <p>InvoBaseOS uses a role-based structure with <strong>Primary Admin</strong>, <strong>Admin</strong>, and <strong>Standard</strong> access. The Primary Admin is the full owner of the system. Admins operate below that level with permissions and re-authentication where needed. Standard users remain view-only for safer oversight.</p>
+          </article>
+
+          <article class="apple-point">
+            <p class="apple-eyebrow">Privacy first</p>
+            <h3>Security is not an extra. It is the product mindset.</h3>
+            <p>From the way actions are handled to the way records are protected, security and privacy are treated as the first priority — not a late add-on.</p>
+          </article>
+
+          <article class="apple-point">
+            <p class="apple-eyebrow">Extreme encryption</p>
+            <h3>Protection at every layer.</h3>
+            <p>All actions are intended to remain encrypted for security, with an aggressive protection mindset built around business-sensitive data.</p>
+          </article>
+
+          <article class="apple-point">
+            <p class="apple-eyebrow">Audit clarity</p>
+            <h3>Every action leaves a trace.</h3>
+            <p>Actions are logged to support accountability, internal review, and confidence in what happened, when it happened, and who performed it.</p>
+          </article>
+
+          <article class="apple-point">
+            <p class="apple-eyebrow">Tamper detection</p>
+            <h3>Made to notice when something feels wrong.</h3>
+            <p>InvoBaseOS is being shaped with tamper-aware thinking so suspicious or unauthorized changes are harder to ignore.</p>
+          </article>
+
+          <article class="apple-point apple-point--wide">
+            <p class="apple-eyebrow">High-stakes actions</p>
+            <h3>Destructive actions should feel serious.</h3>
+            <p>Multi-step warning verification helps protect against accidental deletion or damaging changes. This is especially important for audit purposes, where a reckless click should never be enough.</p>
+          </article>
+
+          <article class="apple-point">
+            <p class="apple-eyebrow">Re-authentication</p>
+            <h3>Admins are challenged again when it matters.</h3>
+            <p>Critical workflows can require re-authentication, while the Primary Admin retains full system-level control.</p>
+          </article>
+
+          <article class="apple-point">
+            <p class="apple-eyebrow">Business identity</p>
+            <h3>Prefix customization built in.</h3>
+            <p>Adjust invoice prefixes to better match your naming structure, client expectations, or internal business style.</p>
+          </article>
+
+          <article class="apple-point apple-point--wide">
+            <p class="apple-eyebrow">Comfortable software</p>
+            <h3>Clean UI. Softer lighting. Less fatigue.</h3>
+            <p>The interface direction is intentionally calm and easy on the eyes, avoiding harsh visual noise so the app feels better during repeated daily use.</p>
+          </article>
+
+          <article class="apple-point">
+            <p class="apple-eyebrow">What comes later</p>
+            <h3>Cloud sync may arrive if users actually want it.</h3>
+            <p>Future cloud-based sync is being considered based on feedback, but the current direction respects users who want stronger local control first.</p>
+          </article>
+
+          <article class="apple-point">
+            <p class="apple-eyebrow">Launch direction</p>
+            <h3>Planned to stay accessible.</h3>
+            <p>InvoBaseOS is currently planned around a <strong>$9.99 one-time launch price</strong>, with the goal of providing a professional offline invoicing experience while keeping the app accessible and easy to adopt.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="legal-footer-wrap" id="rights">
+    <div class="container">
+      <section class="legal-footer" aria-label="Copyright, rights, and product protection">
+        <h2 class="legal-title">Copyright, rights, and product protection</h2>
+        <p class="legal-copy">InvoBaseOS, its name, product identity, interface presentation, branding, related materials, and all associated page content are protected works of Twin Unified Studios LLC. All rights are reserved.</p>
+        <p class="legal-copy">No part of this product page, app branding, screenshots, descriptive copy, interface presentation, or associated marketing material may be copied, redistributed, republished, reverse-branded, or reused without prior written permission from Twin Unified Studios LLC.</p>
+        <p class="legal-copy">InvoBaseOS is currently in beta and preparing for public release. Product details, visuals, availability, and launch information may be updated as development and App Store enrollment progress.</p>
+      </section>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">Copyright © 2026 Twin Unified Studios LLC. All rights reserved.</p>
+      <div class="footer-nav">
+        <a class="nav-link" href="index.html">Main studio site</a>
+        <a class="nav-link" href="privacypolicy.html">Privacy Policy</a>
+        <a class="nav-link" href="tos.html">Terms of Service</a>
+        <a class="nav-link" href="#screenshots">Screenshots</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2" defer></script>
+</body>
+</html>
