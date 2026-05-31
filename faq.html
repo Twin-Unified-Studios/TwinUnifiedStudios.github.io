@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <title>FAQ | InvoBaseOS</title>
+  <meta name="description" content="Frequently Asked Questions for InvoBaseOS by Twin Unified Studios LLC." />
+  <link rel="stylesheet" href="style.css?v=2" />
+
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const initial = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", initial);
+        document.documentElement.style.colorScheme = initial;
+      } catch (e) {}
+      document.documentElement.classList.remove("no-js");
+    })();
+  </script>
+
+  <style>
+    .policy-page {
+      padding: var(--s-9) 0 var(--s-8);
+    }
+
+    .policy-container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px;
+      background: color-mix(in srgb, var(--bg-2) 84%, transparent);
+      border: 1px solid var(--border);
+      border-radius: var(--r-3);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .policy-container h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .policy-container h2 {
+      margin-top: 32px;
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    .policy-container p {
+      margin-top: 10px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .policy-container ul {
+      margin-top: 10px;
+      margin-bottom: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .policy-container li {
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+
+    .policy-container strong,
+    .highlight {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .policy-meta {
+      color: var(--muted);
+    }
+
+    .policy-footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    .policy-footer .footer-link-inline {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-weight: 700;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition:
+        color var(--dur-1) var(--ease),
+        background var(--dur-1) var(--ease),
+        border-color var(--dur-1) var(--ease);
+    }
+
+    .policy-footer .footer-link-inline:hover {
+      color: var(--text);
+      background: rgba(var(--accent), 0.07);
+      border-color: rgba(var(--accent), 0.18);
+    }
+
+    @media (max-width: 768px) {
+      .policy-page {
+        padding: var(--s-7) 0 var(--s-6);
+      }
+
+      .policy-container {
+        padding: 24px;
+      }
+
+      .policy-container h2 {
+        font-size: 1.08rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Twin Unified Studios Home">
+        <img
+          class="brand-logo brand-logo--full theme-logo"
+          src="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+          data-logo-light="images/logo_kit/TwinUnifiedStudios_logo_black.png"
+          data-logo-dark="images/logo_kit/TwinUnifiedStudios_logo_white.png"
+          alt="Twin Unified Studios"
+          width="260"
+          height="90"
+        />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-label">Menu</span>
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <div id="navMenu" class="nav-menu" data-nav-menu>
+          <a class="nav-link" href="index.html">Back to Main Site</a>
+          <a class="nav-link" href="apphomepage.html">InvoBaseOS</a>
+          <a class="nav-link" href="privacypolicy.html">Privacy Policy</a>
+          <a class="nav-link" href="tos.html">Terms of Service</a>
+
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="theme-emoji theme-emoji-moon">🌙</span>
+            <span class="theme-emoji theme-emoji-sun">☀️</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="policy-page">
+    <div class="container">
+      <div class="policy-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div style="margin-top: 18px; margin-bottom: 28px;">
+        <a href="apphomepage.html" class="footer-link-inline">
+            ← Return to InvoBaseOS Home
+        </a>
+        </div>
+
+        <p class="policy-meta"><strong>Twin Unified Studios LLC – InvoBaseOS</strong></p>
+        <p class="policy-meta"><strong>Last Updated: </strong>May 30th, 2026</p>
+
+        <h2>What is InvoBaseOS?</h2>
+        <p>
+          InvoBaseOS is an offline-first invoicing application designed for iPad.
+          It helps freelancers, independent professionals, and small businesses manage invoices and business records locally with a clean and privacy-focused workflow.
+        </p>
+
+        <h2>Who is InvoBaseOS designed for?</h2>
+        <p>InvoBaseOS is designed for:</p>
+        <ul>
+          <li>Freelancers</li>
+          <li>Contractors</li>
+          <li>Independent creators</li>
+          <li>Local businesses</li>
+          <li>Service providers</li>
+          <li>Small teams looking for a local-first invoicing solution</li>
+        </ul>
+
+        <h2>Does InvoBaseOS require an internet connection?</h2>
+        <p>
+          No. InvoBaseOS is designed to operate offline without requiring a constant internet connection.
+        </p>
+
+        <h2>Is my data stored locally?</h2>
+        <p>
+          Yes. Invoice and account data are stored locally on your device using secure local storage methods.
+        </p>
+
+        <h2>Does InvoBaseOS require a subscription?</h2>
+        <p>
+          No. InvoBaseOS is a one-time purchase application with no required recurring monthly subscription.
+        </p>
+
+        <h2>Why is InvoBaseOS a paid app instead of free?</h2>
+        <p>
+          InvoBaseOS was developed as a premium local-first application without relying on mandatory subscriptions, advertising, data harvesting, or forced cloud account systems.
+        </p>
+        <p>
+          The purchase price helps support continued development, application maintenance, future updates, and long-term support as an independent software product.
+        </p>
+
+        <h2>Other invoicing apps are free. Why should I use InvoBaseOS?</h2>
+        <p>
+          Many invoicing applications rely on subscriptions, cloud-based infrastructure, advertising, account ecosystems, or data-driven business models.
+        </p>
+        <p>
+          InvoBaseOS was designed differently. It focuses on local-first ownership, offline functionality, privacy-focused design, reduced dependency on cloud services, and a one-time purchase model without required subscriptions.
+        </p>
+
+        <h2>What if InvoBaseOS is not the right fit for me?</h2>
+        <p>
+          InvoBaseOS may not be the right solution for every workflow or business environment.
+          It was specifically designed for users who value local-first functionality, offline accessibility, privacy-focused workflows, and reduced dependency on cloud-based subscription platforms.
+        </p>
+
+        <h2>Does InvoBaseOS collect or sell personal data?</h2>
+        <p>
+          InvoBaseOS is designed around local-first data ownership principles.
+          The application is not intended to function as a data collection platform or advertising service.
+        </p>
+        <p>
+          Please refer to the official <a href="privacypolicy.html" class="highlight">Privacy Policy</a> for detailed information regarding data handling and privacy practices.
+        </p>
+
+        <h2>Why is onboarding important?</h2>
+        <p>
+          The onboarding process contains important information regarding account setup, local data handling, password responsibilities, Master Key storage, and recovery limitations.
+        </p>
+        <p>
+          Users should carefully read all onboarding instructions before continuing.
+        </p>
+
+        <h2>What is the Master Key?</h2>
+        <p>
+          During onboarding, InvoBaseOS generates a unique Master Key used for recovery and secure account management purposes.
+        </p>
+        <p>
+          The Master Key is shown only once during setup. Users are strongly encouraged to securely store the Master Key immediately after it is displayed.
+        </p>
+
+        <h2>What happens if I lose my Master Key?</h2>
+        <p>
+          If the Master Key is lost and account credentials cannot be recovered, encrypted local data may become permanently inaccessible.
+        </p>
+        <p>
+          Twin Unified Studios LLC cannot recover lost Master Keys, forgotten passwords, or inaccessible encrypted local data.
+        </p>
+
+        <h2>Why does exporting require re-authentication?</h2>
+        <p>
+          Exporting invoice or client data may expose sensitive business information outside the protected local environment of the application.
+        </p>
+        <p>
+          For additional security, administrative actions such as exporting data may require account re-authentication before proceeding.
+        </p>
+
+        <h2>Why are standard accounts view-only?</h2>
+        <p>
+          Standard accounts are intentionally limited to viewing information in order to help reduce the risk of accidental modifications, unauthorized changes, invoice tampering, or deletion of important records.
+        </p>
+        <p>
+          Administrative accounts maintain control over invoice management, account management, exports, and sensitive application settings.
+        </p>
+
+        <h2>Is InvoBaseOS completely secure?</h2>
+        <p>
+          No application can guarantee absolute security.
+        </p>
+        <p>
+          However, InvoBaseOS is designed with a privacy-focused architecture intended to help reduce unnecessary exposure of sensitive business information.
+          Users are still responsible for securing their devices, maintaining strong passwords, safely storing their Master Key, and following onboarding instructions carefully.
+        </p>
+
+        <h2>Who is responsible for device and data management?</h2>
+        <p>
+          Because InvoBaseOS is designed as a local-first application, users are responsible for maintaining access to their devices, protecting account credentials, securely storing their Master Key, and managing their locally stored information.
+        </p>
+        <p>
+          Twin Unified Studios LLC does not maintain direct control over locally stored user data or device access.
+        </p>
+
+        <h2>Can I transfer my data or account to another device?</h2>
+        <p>
+          InvoBaseOS is currently designed primarily for use in a single-device environment.
+          Automatic cloud synchronization and account migration features are not required for normal operation.
+        </p>
+        <p>
+          Users should carefully manage their device access and locally stored information accordingly.
+        </p>
+
+        <h2>What happens if my device is lost, damaged, reset, or inaccessible?</h2>
+        <p>
+          Because InvoBaseOS operates using local-first storage principles, loss of device access or locally stored recovery information may result in permanent loss of access to locally stored data.
+        </p>
+        <p>
+          Twin Unified Studios LLC cannot recover inaccessible local files, forgotten passwords, lost Master Keys, or data removed due to device resets, deletion, corruption, or hardware failure.
+        </p>
+
+        <h2>Why is InvoBaseOS designed this way?</h2>
+        <p>
+          InvoBaseOS was intentionally designed around privacy, local ownership, reduced cloud dependency, and offline accessibility.
+        </p>
+        <p>
+          Unlike cloud-dependent services, local-first applications place greater responsibility on the user for managing device access and recovery information.
+        </p>
+
+        <h2>Does InvoBaseOS sync across devices?</h2>
+        <p>
+        No. Currently, InvoBaseOS is designed for use on a single device only.
+        </p>
+
+        <p>
+        InvoBaseOS follows a local-first design approach and does not currently support automatic cloud synchronization or multi-device syncing.
+        </p>
+
+        <p>
+        Users are responsible for maintaining access to their device, locally stored information, account credentials, and recovery materials.
+        </p>
+
+        <p>
+        Future transfer or migration functionality may be explored later, but is not currently guaranteed.
+        </p>
+
+        <h2>Are there plans for future updates?</h2>
+        <p>
+          Yes. Future updates may include usability improvements, interface refinements, workflow enhancements, additional export options, and expanded functionality based on user feedback and development priorities.
+        </p>
+        <p>
+          Future features are not guaranteed and may change over time.
+        </p>
+
+        <h2>Will there be a desktop version?</h2>
+        <p>
+          A desktop version may be explored in the future depending on development priorities, platform support, and user demand.
+        </p>
+
+        <h2>Does paying for the app guarantee future features?</h2>
+        <p>
+          No. Purchasing InvoBaseOS provides access to the application in its current supported form.
+        </p>
+        <p>
+          Future updates, improvements, and features may be added over time, but future functionality is not guaranteed and may change depending on development priorities and platform limitations.
+        </p>
+
+        <h2>What devices are supported?</h2>
+        <p>
+          InvoBaseOS is currently designed for supported iPad devices running compatible versions of iPadOS.
+        </p>
+
+        <h2>What happens if I uninstall the app?</h2>
+        <p>
+          Removing the application may also remove locally stored data depending on device settings and storage behavior.
+        </p>
+        <p>
+          Users should ensure important information is securely backed up before uninstalling the application.
+        </p>
+
+        <h2>I found a bug or issue. How do I contact support?</h2>
+        <p>
+          Please contact support using the official support channels listed on this page.
+          As a small independent studio, response times may vary.
+        </p>
+        <p>
+          Twin Unified Studios LLC<br>
+          Email: hello@twinunifiedstudios.com
+        </p>
+
+        <div class="policy-footer">
+          <a href="apphomepage.html" class="footer-link-inline">← Return to InvoBaseOS Home</a>
+          <br>
+          © 2026 Twin Unified Studios LLC. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js?v=1" defer></script>
+</body>
+</html>
