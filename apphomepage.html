@@ -537,6 +537,43 @@
       margin-bottom: 8px;
     }
 
+    .screenshot-group + .screenshot-group {
+      margin-top: 36px;
+    }
+
+    .screenshot-group-title {
+      margin-bottom: 16px;
+      color: var(--text);
+      font-size: 1.35rem;
+    }
+
+    .screenshot-carousel {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 2px 2px 16px;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-inline: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .screenshot-slide {
+      flex: 0 0 min(78vw, 420px);
+      scroll-snap-align: start;
+    }
+
+    .screenshot-slide .screenshot-placeholder {
+      height: 100%;
+    }
+
+    .iphone-screenshot-section .section-head {
+      margin-bottom: 24px;
+    }
+
+    .iphone-screenshot-section .info-panel {
+      margin-bottom: 28px;
+    }
+
     .hero-trust { padding: 18px 0 6px; }
 
     .hero-trust-grid,
@@ -852,6 +889,18 @@
         min-height: 300px;
       }
 
+      .screenshot-slide {
+        flex-basis: 88vw;
+      }
+
+      .iphone-screenshot-section .section-head {
+        margin-bottom: 20px;
+      }
+
+      .iphone-screenshot-section .info-panel {
+        margin-bottom: 22px;
+      }
+
       .footer-inner {
         align-items: center;
       }
@@ -904,7 +953,7 @@
           <p class="eyebrow">Offline-capable invoicing for iPad</p>
           <h1 class="hero-title">InvoBaseOS keeps invoicing private, local, and clean.</h1>
           <p class="hero-subtitle">
-            InvoBaseOS is an Apple-inspired invoicing app for iPad, developed by Twin Unified Studios LLC. It is designed for freelancers first, while staying flexible enough for broader business use. The experience focuses on offline capability, encryption-based protection, and a calm interface built for everyday work.
+            InvoBaseOS is an Apple-inspired invoicing app for iPad and iPhone, developed by Twin Unified Studios LLC. It is designed for freelancers first, while staying flexible enough for broader business use. The experience focuses on offline capability, encryption-based protection, and a calm interface built for everyday work.
           </p>
 
           <div class="hero-actions">
@@ -931,7 +980,7 @@
           </div>
 
           <p class="hero-note">
-            <strong>Status:</strong> InvoBaseOS is now available for purchase on the App Store
+            <strong>Status:</strong> InvoBaseOS is now available for purchase on the App Store. <br>InvoBaseOS for iPhone launching soon.
           </p>
         </div>
 
@@ -1040,7 +1089,7 @@
         <ul class="info-list">
           <li>One-time purchase for the core app</li>
           <li>Works offline without requiring constant internet access</li>
-          <li>Designed exclusively for iPad</li>
+          <li>Designed exclusively for iPad and iPhone</li>
           <li>Built for small businesses, freelancers, and independent creators</li>
         </ul>
               <p class="info-disclaimer">
@@ -1058,34 +1107,156 @@
           <p class="section-subtitle">Showcasing the InvoBaseOS features and abilities in the app.</p>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature-card">
-            <div class="screenshot-placeholder">
-              <div>
-                <strong>Dashboard</strong>
-                <img src="images/Screenshots/IMG_0047.PNG" alt="InvobaseOS User Dashboard">
+        <div class="screenshot-group">
+          <h3 class="screenshot-group-title">InvoBaseOS for iPad</h3>
+          <div class="screenshot-carousel" aria-label="InvoBaseOS for iPad screenshots">
+            <article class="feature-card screenshot-slide">
+              <div class="screenshot-placeholder">
+                <div>
+                  <strong>Login Screen</strong>
+                  <img src="images/Screenshots/IMG_0032.PNG" alt="InvoBaseOS login screen on iPad">
+                </div>
               </div>
-            </div>
+            </article>
+            <article class="feature-card screenshot-slide">
+              <div class="screenshot-placeholder">
+                <div>
+                  <strong>Dashboard</strong>
+                  <img src="images/Screenshots/IMG_0047.PNG" alt="InvobaseOS User Dashboard">
+                </div>
+              </div>
+            </article>
+            <article class="feature-card screenshot-slide">
+              <div class="screenshot-placeholder">
+                <div>
+                  <strong>Secured Re-Authentication</strong>
+                  <img src="images/Screenshots/IMG_0049.PNG" alt="InvobaseOS Invoice List">
+                </div>
+              </div>
+            </article>
+            <article class="feature-card screenshot-slide">
+              <div class="screenshot-placeholder">
+                <div>
+                  <strong>Settings Screen</strong>
+                  <img src="images/Screenshots/IMG_0048.PNG" alt="InvoBaseOS Settings Screenshot">
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- iPhone section start -->
+        <div class="screenshot-group iphone-screenshot-section">
+          <div class="section-head">
+            <h2 class="section-title">Designed for iPhone</h2>
+            <p class="section-subtitle">InvoBaseOS provides the same core invoicing, privacy, and security features on iPhone through an interface adapted for a smaller, touch-focused screen. Data remains stored locally on each device, and iPhone and iPad data do not currently synchronize.</p>
+          </div>
+
+          <div class="info-panel">
+            <h3>iPhone highlights</h3>
+            <ul class="info-list">
+              <li>Optimized for smaller screens</li>
+              <li>Compact touch-friendly navigation</li>
+              <li>Same core invoicing and export tools</li>
+              <li>Local on-device data storage</li>
+              <li>Independent data between iPhone and iPad</li>
+            </ul>
+          </div>
+
+          <div class="screenshot-carousel" aria-label="InvoBaseOS for iPhone screenshots">
+            <article class="feature-card screenshot-slide">
+              <div class="screenshot-placeholder">
+                <div>
+                  <strong>Login Screen</strong>
+                  <img src="images/iPhoneScreenshots/IMG_0007.png" alt="InvoBase Log In iPhone">
+                </div>
+              </div>
+            </article>
+            <article class="feature-card screenshot-slide">
+              <div class="screenshot-placeholder">
+                <div>
+                  <strong>Dashboard</strong>
+                  <img src="images/iPhoneScreenshots/IMG_0225.PNG" alt="InvoBaseOS Dashboard iPhone">
+                </div>
+              </div>
+            </article>
+            <article class="feature-card screenshot-slide">
+              <div class="screenshot-placeholder">
+                <div>
+                  <strong>Invoices</strong>
+                  <img src="images/iPhoneScreenshots/IMG_0226.PNG" alt="InvoBaseOS Invoices iPhone">
+                </div>
+              </div>
+            </article>
+            <article class="feature-card screenshot-slide">
+              <div class="screenshot-placeholder">
+                <div>
+                  <strong>Settings</strong>
+                  <img src="images/iPhoneScreenshots/IMG_0009.png" alt="InvoBaseOS Settings iPhone">
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <!-- iPhone section end -->
+      </div>
+    </section>
+
+    <!-- Compatible devices section start -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Compatible Devices</h2>
+          <p class="section-subtitle">InvoBaseOS is designed for supported iPhone and iPad models running the required version of iOS or iPadOS. We recommend your device be running iOS 17.0 or newer.</p>
+        </div>
+
+        <div class="split-panel">
+          <article class="info-panel">
+            <h3>iPhone</h3>
+            <p>These iPhones have been tested and support InvoBaseOS.</p>
+            <ul class="info-list">
+              <li>iPhone SE (2nd Generation)</li>
+              <li>iPhone SE (3rd Generation)</li>
+              <li>iPhone XS | iPhone XS Max</li>
+              <li>iPhone Xr</li>
+              <li>iPhone 11 | iPhone 11 Pro Max</li>
+              <li>iPhone 12 mini | iPhone 12 | iPhone 12 Pro | iPhone 12 Pro Max</li>
+              <li>iPhone 13 mini | iPhone 13 | iPhone 13 Pro | iPhone 13 Pro Max </li>
+              <li>iPhone 14 | iPhone 14 Pro | iPhone 14 Pro Max</li>
+              <li>iPhone 15 | iPhone 15 Plus | iPhone 15 Pro | iPhone 15 Pro Max</li>
+              <li>iPhone 16e | iPhone 16 | iPhone 16 Plus | iPhone 16 Pro | iPhone 16 Pro Max</li>
+              <li>iPhone 17e | iPhone 17 | iPhone 17 Pro | iPhone 17 Pro Max</li>
+              <li>iPhone Air (1st Gen)</li>
+            </ul>
           </article>
-          <article class="feature-card">
-            <div class="screenshot-placeholder">
-              <div>
-                <strong>Secured Re-Authentication</strong>
-                <img src="images/Screenshots/IMG_0049.PNG" alt="InvobaseOS Invoice List">
-              </div>
-            </div>
-          </article>
-          <article class="feature-card">
-            <div class="screenshot-placeholder">
-              <div>
-                <strong>Settings Screen</strong>
-                <img src="images/Screenshots/IMG_0048.PNG" alt="InvoBaseOS Settings Screenshot">
-              </div>
-            </div>
+
+          <article class="info-panel">
+            <h3>iPad</h3>
+            <p>These iPad models have been tested and support InvoBaseOS.</p>
+            <ul class="info-list">
+              <li>iPad (6th Generation)</li>
+              <li>iPad (7th Generation)</li>
+              <li>iPad (9th Generation)</li>
+              <li>iPad (10th Generation)</li>
+              <li>iPad (11th Generation)</li>
+              <li>iPad Mini (6th, 7th Generation)</li>
+              <li>iPad Mini (A17 Pro)</li>
+              <li>iPad Air (2nd, 3rd Generation)</li>
+              <li>iPad Air (5th Generation | M1 Model)</li>
+              <li>iPad Air 11" | 13" M2</li>
+              <li>iPad Air 11" | 13" M3</li>
+              <li>iPad Air 11" | 13" M4</li>
+              <li>iPad Pro 10.5"</li>
+              <li>iPad Pro 11" (2nd, 3rd, 4th Generation)</li>
+              <li>iPad Pro 12.9" (2nd, 3rd, 4th, 5th, 6th Generation)</li>
+              <li>iPad Pro 11" | 13" M4</li>
+              <li>iPad Pro 11" | 13' M5</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
+    <!-- Compatible devices section end -->
 
     <section class="app-selling-points section">
       <div class="container">
