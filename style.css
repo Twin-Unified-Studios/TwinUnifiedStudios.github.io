@@ -177,6 +177,21 @@ h1,h2,h3 { margin: 0; letter-spacing: -0.02em; }
   object-fit: contain;
 }
 
+.invobase-home-logo { margin-bottom: var(--s-4); }
+
+@media (max-width: 768px) {
+  .invobase-home-hero .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .invobase-home-hero .hero-actions {
+    justify-content: center;
+  }
+}
+
 .brand-logo--full{
   height: 110px;
   width: auto;
