@@ -333,6 +333,61 @@
   color: var(--muted);
   margin-top: 10px;
 }
+.bro-store-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.bro-store-row--center {
+  justify-content: center;
+  margin-top: 26px;
+}
+.bro-store-btn {
+  min-width: 200px;
+  min-height: 72px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 11px 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-2) 86%, transparent);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.bro-store-btn small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+.bro-store-btn span {
+  font-size: 1.1rem;
+  font-weight: 850;
+}
+.bro-store-btn em {
+  color: var(--bro);
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.bro-store-btn--soon {
+  cursor: default;
+}
+.bro-store-btn--cta {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  box-shadow: none;
+}
+.bro-store-btn--cta small {
+  color: #d8d2df;
+}
 .bro-stage {
   position: relative;
   min-height: 620px;
@@ -936,6 +991,15 @@
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
+  }
+  .bro-store-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .bro-store-btn {
+    width: 100%;
+    min-width: 0;
   }
   .bro-btn {
     width: 100%;

@@ -26,7 +26,7 @@
       organizationTitle: "Find what matters.",
       organizationBody: "Move between Today, Upcoming, Overdue, Completed, and Recurring views, then use priorities and markers to focus.",
       ctaTitle: "Ready to do the thing?",
-      ctaBody: "Bro’s App Store link will appear here when the listing is ready. Until then, the FAQ and support pages have the practical details.",
+      ctaBody: "Bro’s App Store and TestFlight links will appear here when they are ready. Until then, the FAQ and support pages have the practical details.",
     },
     casual: {
       greeting: "Hey, glad you’re here. Let’s get that thing done.",
@@ -53,7 +53,7 @@
       organizationTitle: "Everything’s where you left it.",
       organizationBody: "Check today, look ahead, catch overdue tasks, or revisit what you finished. Priorities help when the list gets busy.",
       ctaTitle: "Alright, ready to do the thing?",
-      ctaBody: "The App Store link is coming soon. For now, the FAQ and support pages have the useful details.",
+      ctaBody: "The App Store and TestFlight links are coming soon. For now, the FAQ and support pages have the useful details.",
     },
     genz: {
       greeting: "oh hey 👀 welcome. we’re about to lock in.",
@@ -80,7 +80,7 @@
       organizationTitle: "The list is giving organized.",
       organizationBody: "Today, Upcoming, Overdue, Completed, Recurring—it all has a place. Use priorities when it’s time to lock in.",
       ctaTitle: "Ready to lock in?",
-      ctaBody: "The App Store link is loading into the timeline soon. Until then, the FAQ and support pages have the full lore.",
+      ctaBody: "The App Store and TestFlight links are loading into the timeline soon. Until then, the FAQ and support pages have the full lore.",
     },
     unhinged: {
       greeting: "OH. YOU FOUND MY WEBSITE. THE TASKS KNOW.",
@@ -107,7 +107,7 @@
       organizationTitle: "BEHOLD: THE ENTIRE SITUATION.",
       organizationBody: "Today. Upcoming. Overdue. Completed. Recurring. Every task has been categorized. There is nowhere left for it to hide.",
       ctaTitle: "THE TASKS ARE WAITING.",
-      ctaBody: "The App Store link will arrive soon. Until then, consult the FAQ. Contact support. Prepare yourself. We are going to do the thing.",
+      ctaBody: "The App Store and TestFlight links will arrive soon. Until then, consult the FAQ. Contact support. Prepare yourself. We are going to do the thing.",
     },
   };
   var welcomeCopy = {
