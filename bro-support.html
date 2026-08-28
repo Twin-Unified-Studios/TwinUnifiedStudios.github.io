@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bro Support | Twin Unified Studios</title>
+    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="bro.css?v=1" />
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("theme"),
+            d = matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.setAttribute(
+            "data-theme",
+            s || (d ? "dark" : "light"),
+          );
+        } catch (e) {}
+        document.documentElement.classList.remove("no-js");
+      })();
+    </script>
+  </head>
+  <body class="bro-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="bro-product-brand" href="bro.html"
+          ><span class="bro-icon">B.</span
+          ><span>Bro. — Just Do the Thing.</span></a
+        >
+        <nav class="nav">
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="nav-toggle-label">Menu</span
+            ><span class="nav-toggle-icon"></span>
+          </button>
+          <div id="navMenu" class="nav-menu" data-nav-menu>
+            <a class="nav-link" href="bro.html">Bro</a
+            ><a class="nav-link" href="bro-faq.html">FAQ</a
+            ><a class="nav-link" href="bro-privacy.html">Privacy</a
+            ><a class="nav-link nav-link--cta" href="bro-support.html"
+              >Support</a
+            ><button class="theme-toggle" id="themeToggle">
+              <span class="theme-emoji theme-emoji-moon">🌙</span
+              ><span class="theme-emoji theme-emoji-sun">☀️</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="bro-section">
+        <div class="container bro-legal">
+          <p class="bro-kicker">Help is here</p>
+          <h1 class="bro-title" style="margin-top: 20px">Bro Support</h1>
+          <p>
+            Something acting weird? Start with the quick checks below. If it
+            still won’t cooperate, tell us what happened.
+          </p>
+          <h2>Quick troubleshooting</h2>
+          <ul>
+            <li>Close and reopen Bro, then try the action again.</li>
+            <li>
+              Check for an app update and install the latest supported
+              operating-system update.
+            </li>
+            <li>
+              Confirm the task’s due time, reminder time, and completion state.
+            </li>
+            <li>
+              Bro stores information on your device and does not sync between
+              devices. Deleting the app may remove access to that on-device
+              information.
+            </li>
+          </ul>
+          <h2>Notification troubleshooting</h2>
+          <ul>
+            <li>
+              Open your device’s system settings and confirm notifications are
+              allowed for Bro.
+            </li>
+            <li>
+              Check Focus, Do Not Disturb, notification summaries, and
+              device-level scheduling settings.
+            </li>
+            <li>
+              Confirm the task is not already completed and its reminder time
+              has not passed.
+            </li>
+          </ul>
+          <h2>Report a bug</h2>
+          <p>
+            Use Bro’s built-in Bug Report feature. It opens your email service
+            and prepares a message containing only:
+          </p>
+          <ul>
+            <li>Your device type.</li>
+            <li>Your operating-system version.</li>
+            <li>Your Bro app version.</li>
+          </ul>
+          <p>
+            The report does not automatically include tasks, names, birthdays,
+            important dates, reminders, notes, or other personal app
+            information. You decide whether to send the email. Your email
+            service may include your sending address, and anything you manually
+            add will also be included, so do not add sensitive information.
+          </p>
+          <h2>More information</h2>
+          <p>
+            See the <a href="bro-faq.html">Bro FAQ</a> and
+            <a href="bro-privacy.html">Bro Privacy Policy</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Twin Unified Studios LLC.</p>
+        <div class="bro-footer-links">
+          <a class="footer-link" href="bro.html">Bro</a
+          ><a class="footer-link" href="bro-faq.html">FAQ</a
+          ><a class="footer-link" href="bro-privacy.html">Privacy</a
+          ><a class="footer-link" href="index.html">Main Site</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

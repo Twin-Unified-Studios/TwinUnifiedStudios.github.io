@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Bro. — Just Do the Thing. | Twin Unified Studios</title>
+    <meta
+      name="description"
+      content="Meet Bro, a personality-driven productivity app that helps you break tasks down, remember what matters, and just do the thing."
+    />
+    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="bro.css?v=1" />
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("theme"),
+            d = matchMedia("(prefers-color-scheme: dark)").matches,
+            t = s || (d ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", t);
+          document.documentElement.style.colorScheme = t;
+        } catch (e) {}
+        try {
+          if (!localStorage.getItem("broWebsitePersonality")) {
+            document.documentElement.classList.add("bro-gate-pending");
+          }
+        } catch (e) {}
+        document.documentElement.classList.remove("no-js");
+      })();
+    </script>
+  </head>
+  <body class="bro-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bro-personality-transition" data-personality-transition aria-hidden="true">
+      <div class="bro-personality-transition-card" role="status" aria-live="polite">
+        <img
+          src="images/bro/mascot.png"
+          alt=""
+          width="3664"
+          height="5194"
+        />
+        <p>Switching personalities<span aria-hidden="true">…</span></p>
+      </div>
+    </div>
+    <section class="bro-welcome" data-bro-welcome aria-label="Welcome to Bro">
+      <div class="bro-welcome-card">
+        <img
+          class="bro-welcome-icon"
+          src="images/bro/app-icon.png"
+          alt="Bro app icon"
+          width="4267"
+          height="4267"
+        />
+        <img
+          class="bro-welcome-mascot"
+          src="images/bro/mascot.png"
+          alt="Bro"
+          width="3664"
+          height="5194"
+        />
+        <div class="bro-welcome-copy">
+          <p class="bro-welcome-hey">Hey.. Welcome.</p>
+          <h1>Select a personality.</h1>
+          <p>It can be changed in the site.</p>
+        </div>
+        <div class="bro-welcome-options" role="radiogroup" aria-label="Select Bro's personality">
+          <button class="bro-welcome-option" type="button" role="radio" aria-checked="false" tabindex="0" data-welcome-personality="normal">
+            <span>Normal</span><small>Clear and straightforward</small>
+          </button>
+          <button class="bro-welcome-option" type="button" role="radio" aria-checked="false" tabindex="-1" data-welcome-personality="casual">
+            <span>Casual</span><small>Relaxed and encouraging</small>
+          </button>
+          <button class="bro-welcome-option" type="button" role="radio" aria-checked="false" tabindex="-1" data-welcome-personality="genz">
+            <span>Gen Z</span><small>Online and unserious</small>
+          </button>
+          <button class="bro-welcome-option" type="button" role="radio" aria-checked="false" tabindex="-1" data-welcome-personality="unhinged">
+            <span>Unhinged</span><small>Dramatic and chaotic</small>
+          </button>
+        </div>
+        <p class="bro-welcome-preview" data-welcome-preview aria-live="polite">Choose a personality to continue.</p>
+        <button class="bro-btn bro-btn-primary bro-welcome-continue" type="button" data-welcome-continue disabled>
+          Continue to Bro
+        </button>
+        <a class="bro-welcome-skip" href="index.html">Back to the main site</a>
+      </div>
+    </section>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="bro-product-brand" href="bro.html"
+          ><img
+            class="bro-icon"
+            src="images/bro/app-icon.png"
+            alt="Bro app icon"
+            width="4267"
+            height="4267"
+          /><span>Bro. - Just Do the Thing.</span></a
+        >
+        <nav class="nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="nav-toggle-label">Menu</span
+            ><span class="nav-toggle-icon"></span>
+          </button>
+          <div id="navMenu" class="nav-menu" data-nav-menu>
+            <a class="nav-link" href="index.html">Main Site</a
+            ><a class="nav-link" href="#features">Features</a
+            ><a class="nav-link" href="#screenshots">Screenshots</a
+            ><a class="nav-link" href="bro-faq.html">FAQ</a
+            ><a class="nav-link" href="bro-privacy.html">Privacy</a
+            ><a class="nav-link nav-link--cta" href="bro-support.html"
+              >Support</a
+            ><button
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="Toggle theme"
+            >
+              <span class="theme-emoji theme-emoji-moon">🌙</span
+              ><span class="theme-emoji theme-emoji-sun">☀️</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="bro-hero">
+        <div class="container bro-hero-grid">
+          <div>
+            <p class="bro-kicker" data-bro-copy="heroKicker">A productivity app with personality</p>
+            <h1 class="bro-display"><span class="bro-display-lead" data-bro-copy="heroLead">Hey…</span><br /><span data-bro-copy="heroAccent">welcome.</span></h1>
+            <p class="bro-lede" data-bro-copy="heroLede">
+              I’m Bro. I help turn “I should do that” into “done.” No
+              productivity theater—just clear tasks, useful reminders, and a
+              little encouragement.
+            </p>
+            <div
+              class="bro-tabs"
+              role="tablist"
+              aria-label="Choose Bro's personality"
+            >
+              <button
+                class="bro-tab"
+                type="button"
+                role="tab"
+                data-personality="normal"
+                aria-selected="true"
+              >
+                Normal</button
+              ><button
+                class="bro-tab"
+                type="button"
+                role="tab"
+                data-personality="casual"
+                aria-selected="false"
+              >
+                Casual</button
+              ><button
+                class="bro-tab"
+                type="button"
+                role="tab"
+                data-personality="genz"
+                aria-selected="false"
+              >
+                Gen Z</button
+              ><button
+                class="bro-tab"
+                type="button"
+                role="tab"
+                data-personality="unhinged"
+                aria-selected="false"
+              >
+                Unhinged
+              </button>
+            </div>
+            <p class="bro-greeting" data-greeting aria-live="polite">
+              Hey. Welcome to my page.
+            </p>
+            <div class="bro-actions">
+              <a class="bro-btn bro-btn-primary" href="#features"
+                >See what Bro does</a
+              ><a class="bro-btn bro-btn-secondary" href="bro-faq.html"
+                >Read the FAQ</a
+              >
+            </div>
+            <p class="bro-store-note">
+              App Store availability details coming soon.
+            </p>
+          </div>
+          <div class="bro-stage" aria-label="Bro mascot">
+            <div class="bro-hero-mascot">
+              <img
+                src="images/bro/mascot.png"
+                alt="Bro, the standing mascot character"
+                width="3664"
+                height="5194"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bro-section" id="screenshots">
+        <div class="container bro-intro">
+          <div>
+            <h2 class="bro-title" data-bro-copy="introTitle">Easy to start. Easy to come back to.</h2>
+            <p class="bro-copy" data-bro-copy="introBody">
+              Capture what needs doing, give it the detail it deserves, and keep
+              moving without turning task management into another task.
+            </p>
+          </div>
+          <figure class="bro-device bro-device--intro">
+            <img
+              src="images/bro/dashboard.png"
+              alt="Bro dashboard showing task summaries and important dates"
+              loading="lazy"
+              width="1290"
+              height="2796"
+            />
+          </figure>
+          <div>
+            <h2 class="bro-title" data-bro-copy="voiceTitle">What makes Bro, Bro?</h2>
+            <p class="bro-copy" data-bro-copy="voiceBody">
+              The same practical task tools, delivered in a voice you
+              choose—from straightforward to delightfully chaotic.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="bro-section" id="features">
+        <div class="container">
+          <article class="bro-feature">
+            <div class="bro-visual">
+              <figure class="bro-device">
+                <img
+                  src="images/bro/break-it-down-progress.png"
+                  alt="Bro Break It Down screen showing progress through four smaller steps"
+                  loading="lazy"
+                  width="1290"
+                  height="2796"
+                />
+              </figure>
+            </div>
+            <div class="bro-feature-copy">
+              <p class="bro-kicker">Break It Down</p>
+              <h3 data-bro-copy="breakTitle">Big task? Break it down.</h3>
+              <p data-bro-copy="breakBody">
+                Turn something intimidating into smaller, resumable steps.
+                Finish a piece, pause, and pick up where you left off.
+              </p>
+              <ul class="bro-feature-list">
+                <li>Turn big tasks into smaller steps</li>
+                <li>Pause and return without losing your place</li>
+                <li>See your progress as you go</li>
+              </ul>
+            </div>
+          </article>
+          <article class="bro-feature">
+            <div class="bro-visual">
+              <figure class="bro-device">
+                <img
+                  src="images/bro/personality.png"
+                  alt="Bro personality screen with Normal, Casual, Gen Z, and Unhinged choices"
+                  loading="lazy"
+                  width="1290"
+                  height="2796"
+                />
+              </figure>
+            </div>
+            <div class="bro-feature-copy">
+              <p class="bro-kicker">Personality</p>
+              <h3 data-bro-copy="personalityTitle">Your tasks. Your vibe.</h3>
+              <p data-bro-copy="personalityBody">
+                Choose Normal, Casual, Gen Z, or brand-safe Unhinged. The voice
+                changes; the useful task tools stay the same.
+              </p>
+              <ul class="bro-feature-list">
+                <li>Pick from four distinct personalities</li>
+                <li>Change Bro's voice whenever you want</li>
+                <li>Keep the same practical task tools in every mode</li>
+              </ul>
+            </div>
+          </article>
+          <article class="bro-feature">
+            <div class="bro-visual">
+              <!-- Expected source: images/bro/notifications.png -->
+              <figure class="bro-device bro-device--expected is-missing" role="img" aria-label="Notifications screenshot unavailable">
+                <figcaption class="bro-asset-fallback">
+                  <strong>Notifications Screenshot</strong>
+                  <span>Image placeholder</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="bro-feature-copy">
+              <p class="bro-kicker">Celebrations</p>
+              <h3 data-bro-copy="celebrateTitle">Bro celebrates with you.</h3>
+              <p data-bro-copy="celebrateBody">
+                Finish early, right at the due time, or after the deadline—Bro
+                still recognizes that you got it done.
+              </p>
+              <ul class="bro-feature-list">
+                <li>Get extra credit for finishing early</li>
+                <li>Celebrate an on-time completion</li>
+                <li>Finish late without losing the win</li>
+              </ul>
+            </div>
+          </article>
+          <article class="bro-feature">
+            <div class="bro-visual">
+              <figure class="bro-device">
+                <img
+                  src="images/bro/quick-add.png"
+                  alt="Bro Quick Add screen with reusable task setups"
+                  loading="lazy"
+                  width="1290"
+                  height="2796"
+                />
+              </figure>
+            </div>
+            <div class="bro-feature-copy">
+              <p class="bro-kicker">Quick Add</p>
+              <h3 data-bro-copy="quickTitle">Do this often?</h3>
+              <p data-bro-copy="quickBody">
+                Save common task setups and bring them back quickly, with less
+                tapping and less repeated setup.
+              </p>
+              <ul class="bro-feature-list">
+                <li>Save task setups you use often</li>
+                <li>Add familiar tasks with fewer taps</li>
+                <li>Spend less time repeating setup</li>
+              </ul>
+            </div>
+          </article>
+          <article class="bro-feature">
+            <div class="bro-visual">
+              <figure class="bro-device">
+                <img
+                  src="images/bro/recurring-tasks.png"
+                  alt="Bro recurring tasks screen with daily and monthly responsibilities"
+                  loading="lazy"
+                  width="1290"
+                  height="2796"
+                />
+              </figure>
+            </div>
+            <div class="bro-feature-copy">
+              <p class="bro-kicker">Recurring Tasks</p>
+              <h3 data-bro-copy="recurringTitle">Some things come back.</h3>
+              <p data-bro-copy="recurringBody">
+                Keep daily, weekly, and other repeating responsibilities from
+                slipping through the cracks.
+              </p>
+              <ul class="bro-feature-list">
+                <li>Repeat tasks on the schedule you need</li>
+                <li>Keep routines visible and ready</li>
+                <li>Complete one occurrence without losing the next</li>
+              </ul>
+            </div>
+          </article>
+          <article class="bro-feature">
+            <div class="bro-visual">
+              <figure class="bro-device">
+                <img
+                  src="images/bro/important-dates.png"
+                  alt="Bro Important Dates screen with upcoming personal reminders"
+                  loading="lazy"
+                  width="1290"
+                  height="2796"
+                />
+              </figure>
+            </div>
+            <div class="bro-feature-copy">
+              <p class="bro-kicker">Important Dates</p>
+              <h3 data-bro-copy="datesTitle">Remember the important stuff.</h3>
+              <p data-bro-copy="datesBody">
+                Keep birthdays, anniversaries, holidays, and other dates visible
+                alongside everything else that matters.
+              </p>
+              <ul class="bro-feature-list">
+                <li>Track birthdays and anniversaries</li>
+                <li>Remember holidays and personal milestones</li>
+                <li>Keep important dates beside your tasks</li>
+              </ul>
+            </div>
+          </article>
+          <article class="bro-feature">
+            <div class="bro-visual">
+              <figure class="bro-device">
+                <img
+                  src="images/bro/navigation-settings.png"
+                  alt="Bro navigation showing task, date, and settings views"
+                  loading="lazy"
+                  width="1290"
+                  height="2796"
+                />
+              </figure>
+            </div>
+            <div class="bro-feature-copy">
+              <p class="bro-kicker">Organization</p>
+              <h3 data-bro-copy="organizationTitle">Find what matters.</h3>
+              <p data-bro-copy="organizationBody">
+                Move between Today, Upcoming, Overdue, Completed, and Recurring
+                views, then use priorities and markers to focus.
+              </p>
+              <ul class="bro-feature-list">
+                <li>See what needs attention today</li>
+                <li>Move between upcoming, overdue, and completed work</li>
+                <li>Use priorities and markers to focus</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="bro-section">
+        <div class="container bro-cta">
+          <h2 class="bro-title" data-bro-copy="ctaTitle">Ready to do the thing?</h2>
+          <p data-bro-copy="ctaBody">
+            Bro’s App Store link will appear here when the listing is ready.
+            Until then, the FAQ and support pages have the practical details.
+          </p>
+          <div class="bro-actions" style="justify-content: center">
+            <a
+              class="bro-btn"
+              style="background: white; color: #201b2c"
+              href="bro-faq.html"
+              >Browse FAQ</a
+            ><a class="bro-btn" style="color: white" href="bro-support.html"
+              >Get support</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="bro-rights-wrap" id="rights">
+      <div class="container">
+        <section class="bro-rights" aria-label="Copyright, rights, and product protection">
+          <h2>Copyright, rights, and product protection</h2>
+          <p>Bro, its name, branding, visual identity, mascot, user interface, website content, documentation, personality system, and related materials are the intellectual property of Twin Unified Studios LLC. All rights reserved.</p>
+          <p>No part of this product page, app branding, logos, mascot artwork, screenshots, descriptive content, personality copy, user interface, interface presentation, or associated marketing materials may be copied, reproduced, redistributed, republished, modified, reverse-branded, or reused without the prior written permission of Twin Unified Studios LLC.</p>
+          <p>Bro is being prepared for release on the Apple App Store. Product details, visuals, features, personalities, and availability may be updated as the application continues to change and evolve.</p>
+        </section>
+      </div>
+    </div>
+    <aside class="bro-easter-footer" data-bro-easter-egg aria-label="A hidden Bro encounter">
+      <div class="container bro-easter-footer-inner">
+        <p class="bro-easter-message" data-bro-easter-message aria-live="polite" hidden></p>
+        <button class="bro-easter-button" data-bro-easter-button type="button" aria-label="Bro">
+          <img
+            src="images/bro/mascot.png"
+            alt="Bro"
+            width="3664"
+            height="5194"
+          />
+        </button>
+      </div>
+    </aside>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Twin Unified Studios LLC. All rights reserved.</p>
+        <div class="bro-footer-links">
+          <a class="footer-link" href="bro.html">Bro</a
+          ><a class="footer-link" href="bro-faq.html">FAQ</a
+          ><a class="footer-link" href="bro-privacy.html">Privacy</a
+          ><a class="footer-link" href="bro-support.html">Support</a
+          ><a class="footer-link" href="index.html">Main Site</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="bro.js"></script>
+  </body>
+</html>

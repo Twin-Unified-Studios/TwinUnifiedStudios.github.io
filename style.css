@@ -179,6 +179,84 @@ h1,h2,h3 { margin: 0; letter-spacing: -0.02em; }
 
 .invobase-home-logo { margin-bottom: var(--s-4); }
 
+.bro-home-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 18%, rgb(255 107 87 / 0.18), transparent 34%),
+    radial-gradient(circle at 12% 88%, rgb(255 200 87 / 0.12), transparent 30%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+  border-block: 1px solid var(--border);
+}
+
+.bro-home-icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: var(--s-4);
+  border-radius: 18px;
+  object-fit: contain;
+  box-shadow: 0 14px 30px rgb(32 27 44 / 0.2);
+}
+
+.bro-home-eyebrow { color: #ff806d; }
+
+.bro-home-primary {
+  color: #201b2c;
+  background: linear-gradient(135deg, #ffc857, #ff6b57);
+  border: 1px solid rgb(255 107 87 / 0.45);
+  box-shadow: 0 12px 28px rgb(255 107 87 / 0.2);
+}
+
+.bro-home-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgb(255 107 87 / 0.28);
+}
+
+.bro-home-card {
+  padding: clamp(20px, 4vw, 30px);
+  border: 1px solid var(--border);
+  border-radius: var(--r-4);
+  background: color-mix(in srgb, var(--bg-2) 86%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.bro-home-chips {
+  display: flex;
+  justify-content: center;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+}
+
+.bro-home-chip {
+  color: #201b2c;
+  background: linear-gradient(135deg, #ffc857, #ff806d);
+  border-color: transparent;
+}
+
+.bro-home-mascot-wrap {
+  position: relative;
+  display: grid;
+  place-items: end center;
+  min-height: 420px;
+  margin: 18px 0;
+  overflow: hidden;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 50% 70%, rgb(255 200 87 / 0.38), transparent 44%),
+    linear-gradient(145deg, rgb(255 200 87 / 0.18), rgb(255 107 87 / 0.16));
+}
+
+.bro-home-mascot {
+  position: relative;
+  width: auto;
+  height: 390px;
+  object-fit: contain;
+  filter: drop-shadow(12px 18px 12px rgb(32 27 44 / 0.2));
+}
+
+.bro-home-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
 @media (max-width: 768px) {
   .invobase-home-hero .hero-copy {
     display: flex;
@@ -190,6 +268,44 @@ h1,h2,h3 { margin: 0; letter-spacing: -0.02em; }
   .invobase-home-hero .hero-actions {
     justify-content: center;
   }
+
+  .bro-home-hero .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bro-home-hero .hero-actions {
+    justify-content: center;
+  }
+
+  .bro-home-card {
+    margin-top: var(--s-5);
+  }
+
+  .bro-home-mascot-wrap { min-height: 340px; }
+  .bro-home-mascot { height: 320px; }
+  .bro-home-metrics { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .bro-home-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bro-home-card {
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .bro-home-mascot-wrap {
+    min-height: 280px;
+    border-radius: 24px;
+  }
+
+  .bro-home-mascot { height: 265px; }
 }
 
 .brand-logo--full{
