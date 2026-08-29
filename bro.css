@@ -643,6 +643,30 @@
 .bro-legal a {
   text-decoration: underline;
 }
+.bro-help-section {
+  padding-top: 0;
+}
+.bro-help-panel {
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid var(--border);
+  border-radius: 36px;
+  background: color-mix(in srgb, var(--bro-paper) 90%, transparent);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+.bro-help-panel .bro-title {
+  margin-top: 12px;
+}
+.bro-help-panel > p:not(.bro-kicker) {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.bro-help-actions {
+  justify-content: center;
+  margin-top: 24px;
+}
 .bro-support-form {
   margin-top: 24px;
   color: var(--text);

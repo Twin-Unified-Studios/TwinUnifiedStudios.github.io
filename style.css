@@ -257,6 +257,33 @@ h1,h2,h3 { margin: 0; letter-spacing: -0.02em; }
 
 .bro-home-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
+.bro-home-hero .hero-title,
+.bro-home-card .mini-metric-value {
+  color: var(--text);
+}
+
+.bro-home-hero .hero-subtitle,
+.bro-home-card .mini-metric-label,
+.bro-home-card .chip--outline {
+  color: var(--muted);
+}
+
+:root[data-theme="light"] .bro-home-eyebrow {
+  color: #a93627;
+}
+
+:root[data-theme="dark"] .bro-home-eyebrow {
+  color: #ff9a87;
+}
+
+:root[data-theme="light"] .bro-home-card {
+  background: rgb(255 255 255 / 0.9);
+}
+
+:root[data-theme="dark"] .bro-home-card {
+  background: rgb(12 18 35 / 0.82);
+}
+
 @media (max-width: 768px) {
   .invobase-home-hero .hero-copy {
     display: flex;

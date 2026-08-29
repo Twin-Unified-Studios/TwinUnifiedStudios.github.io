@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>InvoBaseOS Support | Twin Unified Studios</title>
+    <meta name="description" content="Troubleshooting and bug-report support for InvoBaseOS on iPhone and iPad." />
+    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="invobase-support.css?v=1" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme"),
+            dark = matchMedia("(prefers-color-scheme: dark)").matches,
+            theme = saved || (dark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {}
+        document.documentElement.classList.remove("no-js");
+      })();
+    </script>
+  </head>
+  <body class="invobase-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="invobase-brand" href="apphomepage.html" aria-label="InvoBaseOS home">
+          <img src="images/logo_kit/App Icon TWUSLock_iOSApp.png" alt="InvoBaseOS app icon" width="96" height="96" />
+          <span>InvoBaseOS</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+            <span class="nav-toggle-label">Menu</span><span class="nav-toggle-icon" aria-hidden="true"></span>
+          </button>
+          <div id="navMenu" class="nav-menu" data-nav-menu>
+            <a class="nav-link" href="apphomepage.html">InvoBaseOS</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
+            <a class="nav-link" href="privacypolicy.html">Privacy</a>
+            <a class="nav-link nav-link--cta" href="invobase-support.html">Support</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+              <span class="theme-emoji theme-emoji-moon">🌙</span><span class="theme-emoji theme-emoji-sun">☀️</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="invobase-support-main" id="main">
+      <div class="container invobase-support-shell">
+        <section class="invobase-support-hero" aria-labelledby="support-title">
+          <p class="invobase-kicker">Product support</p>
+          <h1 class="invobase-support-title" id="support-title">InvoBaseOS Support</h1>
+          <p class="invobase-support-lede">
+            Start with the checks below. If the problem continues, send a focused bug or user-experience report with the required app and device details.
+          </p>
+        </section>
+
+        <div class="invobase-support-grid">
+          <article class="card invobase-support-card">
+            <h2>Quick troubleshooting</h2>
+            <ul>
+              <li>Close and reopen InvoBaseOS, then repeat the action.</li>
+              <li>Install the latest available InvoBaseOS update.</li>
+              <li>Confirm your iPhone or iPad is running a supported operating-system version.</li>
+              <li>Record the exact steps that caused the issue and any message displayed.</li>
+            </ul>
+          </article>
+          <article class="card invobase-support-card">
+            <h2>Local-only information</h2>
+            <p>
+              InvoBaseOS information is stored locally on each device and does not synchronize between iPhone and iPad. Twin Unified Studios LLC cannot remotely view, retrieve, or repair your local invoices, customer records, credentials, or application data.
+            </p>
+          </article>
+        </div>
+
+        <aside class="invobase-support-alert" aria-label="Permanent data-loss warning">
+          <p>
+            <strong>Important:</strong> Fully deleting InvoBaseOS can permanently remove its locally stored information. Twin Unified Studios LLC cannot recover data after the app and its local data have been deleted. Do not delete the app as a troubleshooting step unless you understand and accept that risk.
+          </p>
+        </aside>
+
+        <form class="card form invobase-support-form" action="https://formsubmit.co/info@twinunifiedstudios.com" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="InvoBaseOS Support Request" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://twinunifiedstudios.com/invobase-thanks.html" />
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden />
+          <h2>Report a bug or experience issue</h2>
+          <p>
+            Use this form for reproducible bugs, confusing behavior, accessibility problems, and other product-experience issues. FormSubmit’s standard CAPTCHA remains enabled.
+          </p>
+          <div class="invobase-support-fields">
+            <div class="field">
+              <label for="invobase-email">Reply email</label>
+              <input id="invobase-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="invobase-topic">Issue category</label>
+              <select id="invobase-topic" name="issue_category" required>
+                <option value="" selected disabled>Select an issue…</option>
+                <option>App launch or setup bug</option>
+                <option>Login or local access issue</option>
+                <option>Invoice creation or editing bug</option>
+                <option>PDF, export, print, or sharing issue</option>
+                <option>Business or customer workflow issue</option>
+                <option>Roles, permissions, or re-authentication issue</option>
+                <option>Unexpected data behavior</option>
+                <option>Interface or usability issue</option>
+                <option>Accessibility issue</option>
+                <option>Performance or stability issue</option>
+                <option>Privacy or security concern</option>
+                <option>Other product issue</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="invobase-version">InvoBaseOS version</label>
+              <input id="invobase-version" name="invobaseos_version" type="text" placeholder="Example: 1.0.0" required />
+            </div>
+            <div class="field">
+              <label for="invobase-platform">Device platform</label>
+              <select id="invobase-platform" name="device_platform" required>
+                <option value="" selected disabled>Select a device…</option>
+                <option>iPhone</option>
+                <option>iPad</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="invobase-device">Device model</label>
+              <input id="invobase-device" name="device_model" type="text" placeholder="Example: iPad Pro 11-inch" required />
+            </div>
+            <div class="field">
+              <label for="invobase-os">iOS or iPadOS version</label>
+              <input id="invobase-os" name="operating_system_version" type="text" placeholder="Example: iPadOS 20.0" required />
+            </div>
+            <div class="field invobase-field-wide">
+              <label for="invobase-steps">Steps to reproduce and what happened</label>
+              <textarea id="invobase-steps" name="issue_details" rows="8" placeholder="Describe what you selected, what you expected, what happened instead, and whether it happens every time. Do not paste invoice, customer, financial, credential, or confidential business information." required></textarea>
+            </div>
+            <div class="field invobase-field-wide">
+              <label for="invobase-attachment">Screenshot or screen recording (optional)</label>
+              <input id="invobase-attachment" name="attachment" type="file" accept="image/*,video/*" aria-describedby="invobase-attachment-warning" />
+              <p class="invobase-attachment-warning" id="invobase-attachment-warning">
+                Before attaching anything, remove or obscure customer names, addresses, contact details, invoice numbers, prices, tax information, payment information, credentials, business records, notification previews, and all other personal or confidential information.
+              </p>
+            </div>
+            <label class="invobase-confirm invobase-field-wide">
+              <input type="checkbox" name="privacy_confirmation" value="confirmed" required />
+              <span>I reviewed my description and attachments and did not include customer, invoice, financial, credential, personal, or confidential business information.</span>
+            </label>
+          </div>
+          <button class="btn btn-primary" type="submit">Send support request</button>
+          <p class="fineprint invobase-form-note">
+            Your email, diagnostics, message, and optional attachment are sent through FormSubmit to Twin Unified Studios LLC. Review the <a href="privacypolicy.html">Privacy Policy</a> before sending.
+            If the form fails to submit, email <a href="mailto:info@twinunifiedstudios.com">info@twinunifiedstudios.com</a> instead and include your InvoBaseOS version, device model, platform, and operating-system version.
+          </p>
+        </form>
+      </div>
+    </main>
+    <footer class="site-footer invobase-support-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Twin Unified Studios LLC. All rights reserved.</p>
+        <div class="footer-right">
+          <a class="footer-link" href="apphomepage.html">InvoBaseOS</a>
+          <a class="footer-link" href="faq.html">FAQ</a>
+          <a class="footer-link" href="privacypolicy.html">Privacy</a>
+          <a class="footer-link" href="tos.html">Terms</a>
+          <a class="footer-link" href="index.html">Main Site</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js?v=2" defer></script>
+  </body>
+</html>

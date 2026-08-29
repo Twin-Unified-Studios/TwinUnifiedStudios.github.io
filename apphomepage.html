@@ -701,8 +701,53 @@
       max-width: 54ch;
     }
 
+    .invobase-help-section {
+      padding-top: 0;
+    }
+
+    .invobase-help-panel {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: color-mix(in srgb, var(--card-solid) 88%, transparent);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .invobase-help-panel .section-title {
+      margin-top: 12px;
+    }
+
+    .invobase-help-panel > p {
+      max-width: 680px;
+      margin: 16px auto 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .invobase-help-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
     .legal-footer-wrap {
       padding: 24px 0 42px;
+    }
+
+    @media (max-width: 520px) {
+      .invobase-help-panel {
+        padding: 26px 20px;
+        border-radius: 24px;
+      }
+
+      .invobase-help-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     .legal-footer {
@@ -936,6 +981,7 @@
           <a class="nav-link" href="#security">Security</a>
           <a class="nav-link" href="#screenshots">Screenshots</a>
           <a class="nav-link" href="faq.html">FAQ</a>
+          <a class="nav-link" href="invobase-support.html">Support</a>
           <a class="nav-link nav-link--cta" href="https://apps.apple.com/us/app/invobaseos/id6773121148">App Store</a>
 
           <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -1336,6 +1382,24 @@
         </div>
       </div>
     </section>
+
+    <section class="section invobase-help-section" aria-labelledby="invobase-help-title">
+      <div class="container">
+        <div class="invobase-help-panel">
+          <span class="section-kicker">Support</span>
+          <h2 class="section-title" id="invobase-help-title">Need help with InvoBaseOS?</h2>
+          <p>
+            Visit Support to report a bug or user-experience issue, or check the
+            FAQ for quick answers. InvoBaseOS stores information locally, so Twin
+            Unified Studios LLC cannot remotely recover deleted or inaccessible data.
+          </p>
+          <div class="invobase-help-actions">
+            <a class="btn btn-primary" href="invobase-support.html">Contact Support</a>
+            <a class="btn btn-secondary" href="faq.html">Read the FAQ</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div class="legal-footer-wrap" id="rights">
@@ -1356,6 +1420,8 @@
         <a class="nav-link" href="index.html">Main studio site</a>
         <a class="nav-link" href="privacypolicy.html">Privacy Policy</a>
         <a class="nav-link" href="tos.html">Terms of Service</a>
+        <a class="nav-link" href="faq.html">FAQ</a>
+        <a class="nav-link" href="invobase-support.html">Support</a>
         <a class="nav-link" href="#screenshots">Screenshots</a>
       </div>
     </div>
