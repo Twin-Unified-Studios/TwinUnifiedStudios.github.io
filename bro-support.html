@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bro Support | Twin Unified Studios</title>
+    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="bro.css?v=1" />
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("theme"),
+            d = matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.setAttribute(
+            "data-theme",
+            s || (d ? "dark" : "light"),
+          );
+        } catch (e) {}
+        document.documentElement.classList.remove("no-js");
+      })();
+    </script>
+  </head>
+  <body class="bro-page bro-support-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="bro-product-brand" href="bro.html"
+          ><img
+            class="bro-icon"
+            src="images/bro/app-icon.png"
+            alt="Bro app icon"
+            width="4267"
+            height="4267"
+          />
+          <span>Bro. — Just Do the Thing.</span></a
+        >
+        <nav class="nav">
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="nav-toggle-label">Menu</span
+            ><span class="nav-toggle-icon"></span>
+          </button>
+          <div id="navMenu" class="nav-menu" data-nav-menu>
+            <a class="nav-link" href="bro.html">Bro</a
+            ><a class="nav-link" href="bro-faq.html">FAQ</a
+            ><a class="nav-link" href="bro-privacy.html">Privacy</a
+            ><a class="nav-link" href="bro-terms.html">Terms</a
+            ><a class="nav-link nav-link--cta" href="bro-support.html"
+              >Support</a
+            ><button class="theme-toggle" id="themeToggle">
+              <span class="theme-emoji theme-emoji-moon">🌙</span
+              ><span class="theme-emoji theme-emoji-sun">☀️</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="bro-section">
+        <div class="container bro-legal">
+          <p class="bro-kicker">Help is here</p>
+          <h1 class="bro-title" style="margin-top: 20px">Bro Support</h1>
+          <p>
+            Something acting weird? Start with the quick checks below. If it
+            still won’t cooperate, tell us what happened.
+          </p>
+          <h2>Quick troubleshooting</h2>
+          <ul>
+            <li>Close and reopen Bro, then try the action again.</li>
+            <li>
+              Check for an app update and install the latest supported
+              operating-system update. Bro requires iOS 17.6 or later.
+            </li>
+            <li>
+              Confirm the task’s due time, reminder time, and completion state.
+            </li>
+            <li>
+              Bro stores information on your device and does not sync between
+              devices. Deleting the app may remove access to that on-device
+              information.
+            </li>
+          </ul>
+          <h2>Notification troubleshooting</h2>
+          <ul>
+            <li>
+              Open your device’s system settings and confirm notifications are
+              allowed for Bro.
+            </li>
+            <li>
+              Check Focus, Do Not Disturb, notification summaries, and
+              device-level scheduling settings.
+            </li>
+            <li>
+              Confirm the task is not already completed and its reminder time
+              has not passed.
+            </li>
+          </ul>
+          <h2>Report a bug</h2>
+          <p>
+            Use Bro’s built-in Bug Report feature. It opens your email service
+            and prepares a message containing only:
+          </p>
+          <ul>
+            <li>Your device type.</li>
+            <li>Your operating-system version.</li>
+            <li>Your Bro app version.</li>
+          </ul>
+          <p>
+            The report does not automatically include tasks, names, birthdays,
+            important dates, reminders, notes, or other personal app
+            information. You decide whether to send the email. Your email
+            service may include your sending address, and anything you manually
+            add will also be included, so do not add sensitive information.
+          </p>
+          <h2>Contact Bro Support</h2>
+          <p>
+            If you cannot or prefer not to use the in-app Bug Report feature,
+            use this form. The diagnostic fields below are required so we can
+            understand the environment where the problem occurred.
+          </p>
+          <form
+            class="card form bro-support-form"
+            action="https://formsubmit.co/info@twinunifiedstudios.com"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <input type="hidden" name="_subject" value="Bro Support Request" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://twinunifiedstudios.com/bro-thanks.html" />
+            <input class="bro-form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" hidden />
+            <div class="field">
+              <label for="support-email">Reply email</label>
+              <input id="support-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="support-topic">What do you need help with?</label>
+              <select id="support-topic" name="support_topic" required>
+                <option value="" selected disabled>Select a support topic…</option>
+                <option>Bug or unexpected behavior</option>
+                <option>Notifications or reminders</option>
+                <option>Tasks or recurring tasks</option>
+                <option>Important Dates</option>
+                <option>Personality or language settings</option>
+                <option>Privacy or on-device data</option>
+                <option>Accessibility</option>
+                <option>Other support question</option>
+              </select>
+            </div>
+            <div class="bro-support-diagnostics">
+              <div class="field">
+                <label for="bro-version">Bro app version</label>
+                <input id="bro-version" name="bro_app_version" type="text" placeholder="Example: 1.0.0" required />
+              </div>
+              <div class="field">
+                <label for="ios-version">iOS version</label>
+                <input id="ios-version" name="ios_version" type="text" placeholder="Example: iOS 26.0" required />
+              </div>
+              <div class="field">
+                <label for="iphone-model">iPhone model</label>
+                <input id="iphone-model" name="iphone_model" type="text" placeholder="Example: iPhone 17" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="support-details">What happened?</label>
+              <textarea id="support-details" name="support_details" rows="7" placeholder="Describe the steps you took, what you expected, and what happened instead. Do not include tasks, names, dates, notes, or other personal information." required></textarea>
+            </div>
+            <div class="field">
+              <label for="support-attachment">Screenshot or screen recording (optional)</label>
+              <input id="support-attachment" name="attachment" type="file" accept="image/*,video/*" aria-describedby="attachment-warning" />
+              <p class="bro-support-warning" id="attachment-warning">
+                Before attaching anything, remove or obscure all personal
+                information. Check Bro content, names, tasks, dates, notes,
+                notification previews, and anything else visible on screen.
+              </p>
+            </div>
+            <label class="bro-support-confirm">
+              <input type="checkbox" name="privacy_confirmation" value="confirmed" required />
+              <span>I reviewed my message and attachments and did not include personal or sensitive information.</span>
+            </label>
+            <button class="btn btn-primary" type="submit">Send support request</button>
+            <p class="fineprint form-submit-note">
+              Your reply email, diagnostics, message, and optional attachment
+              are sent through FormSubmit to Twin Unified Studios LLC. See the
+              <a href="bro-privacy.html">Bro Privacy Policy</a> before sending.
+              If the form fails to submit, email
+              <a href="mailto:info@twinunifiedstudios.com">info@twinunifiedstudios.com</a>
+              instead and include your Bro version, iOS version, and iPhone model.
+            </p>
+          </form>
+          <h2>More information</h2>
+          <p>
+            See the <a href="bro-faq.html">Bro FAQ</a> and
+            <a href="bro-privacy.html">Bro Privacy Policy</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Twin Unified Studios LLC.</p>
+        <div class="bro-footer-links">
+          <a class="footer-link" href="bro.html">Bro</a
+          ><a class="footer-link" href="bro-faq.html">FAQ</a
+          ><a class="footer-link" href="bro-privacy.html">Privacy</a
+          ><a class="footer-link" href="bro-terms.html">Terms</a
+          ><a class="footer-link" href="index.html">Main Site</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
