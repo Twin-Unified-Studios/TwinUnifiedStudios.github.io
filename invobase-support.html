@@ -61,7 +61,7 @@
             <ul>
               <li>Close and reopen InvoBaseOS, then repeat the action.</li>
               <li>Install the latest available InvoBaseOS update.</li>
-              <li>Confirm your iPhone or iPad is running a supported operating-system version.</li>
+              <li>Confirm your iPhone or iPad is running the latest iOS or iPadOS updates.</li>
               <li>Record the exact steps that caused the issue and any message displayed.</li>
             </ul>
           </article>
@@ -74,8 +74,30 @@
         </div>
 
         <aside class="invobase-support-alert" aria-label="Permanent data-loss warning">
+          <h2>Master Key and 10-attempt recovery policy</h2>
           <p>
-            <strong>Important:</strong> Fully deleting InvoBaseOS can permanently remove its locally stored information. Twin Unified Studios LLC cannot recover data after the app and its local data have been deleted. Do not delete the app as a troubleshooting step unless you understand and accept that risk.
+            Your randomized InvoBaseOS Master Key uses the format
+            <code>INV-REC-XXXX-XXXX-XXXX-XXXX</code>. Twin Unified Studios LLC
+            cannot view, recreate, reset, verify, or recover your Master Key.
+            Never include your Master Key in this form, an email, a screenshot,
+            or a screen recording.
+          </p>
+          <p>
+            InvoBaseOS allows a maximum of 10 recovery attempts. After 10
+            unsuccessful attempts, recovery access and the locally stored
+            content protected by it may be permanently lost. Support cannot
+            reset the attempt counter, bypass the recovery policy, unlock the
+            app, or restore inaccessible content.
+          </p>
+          <p>
+            <strong>Important:</strong> Keep your Master Key secure and enter it
+            carefully. Fully deleting InvoBaseOS can also permanently remove its
+            locally stored information. To the maximum extent permitted by law,
+            Twin Unified Studios LLC is not liable for lost or inaccessible
+            content resulting from a missing or incorrect Master Key, exhausted
+            recovery attempts, application deletion, device loss, storage
+            failure, or other loss of local access. Do not delete the app as a
+            troubleshooting step unless you understand and accept that risk.
           </p>
         </aside>
 
@@ -99,6 +121,7 @@
                 <option value="" selected disabled>Select an issue…</option>
                 <option>App launch or setup bug</option>
                 <option>Login or local access issue</option>
+                <option>Master Key or recovery-attempt issue</option>
                 <option>Invoice creation or editing bug</option>
                 <option>PDF, export, print, or sharing issue</option>
                 <option>Business or customer workflow issue</option>
@@ -129,7 +152,7 @@
             </div>
             <div class="field">
               <label for="invobase-os">iOS or iPadOS version</label>
-              <input id="invobase-os" name="operating_system_version" type="text" placeholder="Example: iPadOS 20.0" required />
+              <input id="invobase-os" name="operating_system_version" type="text" placeholder="Example: iPadOS 26.0" required />
             </div>
             <div class="field invobase-field-wide">
               <label for="invobase-steps">Steps to reproduce and what happened</label>

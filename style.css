@@ -778,6 +778,18 @@ h1,h2,h3 { margin: 0; letter-spacing: -0.02em; }
   color: var(--muted);
 }
 
+:root[data-theme="light"] .bro-home-card .bro-home-chip {
+  color: #201b2c;
+  background: linear-gradient(135deg, #ffc857, #ff806d);
+  border-color: transparent;
+}
+
+:root[data-theme="dark"] .bro-home-card .bro-home-chip {
+  color: #ffffff;
+  background: linear-gradient(135deg, #8f3925, #a92739);
+  border-color: rgba(255, 154, 135, 0.5);
+}
+
 .hero-image {
   width: 100%;
   height: auto;

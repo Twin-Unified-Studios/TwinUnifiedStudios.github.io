@@ -99,6 +99,22 @@
   background: rgba(235, 87, 87, 0.08);
 }
 
+.invobase-support-alert h2 {
+  margin-bottom: 12px;
+  color: var(--text);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.invobase-support-alert p + p {
+  margin-top: 12px;
+}
+
+.invobase-support-alert code {
+  color: var(--text);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
 .invobase-support-alert strong {
   color: var(--text);
 }

@@ -671,6 +671,16 @@
   margin-top: 24px;
   color: var(--text);
 }
+.bro-support-page .bro-legal {
+  text-align: center;
+}
+.bro-support-page .bro-legal ul {
+  display: inline-block;
+  text-align: left;
+}
+.bro-support-page .bro-support-form {
+  text-align: left;
+}
 .bro-support-form label {
   color: var(--text);
   font-weight: 800;
@@ -715,6 +725,7 @@
 .bro-thanks-card {
   position: relative;
   width: min(100%, 760px);
+  margin-inline: auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(150px, 220px);
   gap: clamp(24px, 5vw, 54px);
@@ -732,6 +743,9 @@
 .bro-thanks-visual {
   min-width: 0;
 }
+.bro-thanks-copy {
+  text-align: center;
+}
 .bro-thanks-title {
   margin-top: 16px;
   color: var(--text);
@@ -742,13 +756,17 @@
 }
 .bro-thanks-message {
   max-width: 34rem;
-  margin-top: 20px;
+  margin: 20px auto 0;
   color: var(--muted);
   font-size: 1.08rem;
   line-height: 1.7;
   overflow-wrap: anywhere;
 }
 .bro-thanks-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-top: 28px;
 }
 .bro-thanks-visual {
