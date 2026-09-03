@@ -358,6 +358,16 @@
   color: var(--text);
   box-shadow: var(--shadow);
   text-align: center;
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+.bro-store-btn[href]:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--bro) 58%, var(--border));
+}
+.bro-store-btn[href]:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--bro) 70%, transparent);
+  outline-offset: 3px;
 }
 .bro-store-btn small {
   color: var(--muted);
