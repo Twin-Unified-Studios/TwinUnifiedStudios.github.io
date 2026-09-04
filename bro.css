@@ -458,6 +458,85 @@
 .bro-section {
   padding: clamp(70px, 9vw, 120px) 0;
 }
+.bro-promo {
+  padding: clamp(28px, 5vw, 56px) 0 0;
+}
+.bro-promo-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 52px);
+  border: 1px solid color-mix(in srgb, var(--bro) 42%, var(--border));
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(255, 200, 87, 0.3), transparent 34%),
+    color-mix(in srgb, var(--bg-2) 92%, var(--bro-paper));
+  box-shadow: var(--shadow);
+}
+.bro-promo-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+}
+.bro-promo-label {
+  margin-bottom: 10px;
+  color: var(--bro);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.bro-promo h2 {
+  font-size: clamp(2rem, 4.5vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+.bro-promo-copy > p:not(.bro-promo-label):not(.bro-promo-terms) {
+  max-width: 40rem;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+.bro-promo-copy s {
+  text-decoration-thickness: 2px;
+}
+.bro-promo-terms {
+  max-width: 44rem;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+.bro-promo-action {
+  position: relative;
+  z-index: 1;
+  min-width: 220px;
+  text-align: center;
+}
+.bro-promo-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 0.78rem;
+  font-weight: 750;
+  color: var(--muted);
+}
+.bro-promo-price strong {
+  color: var(--text);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+.bro-promo-was {
+  text-decoration: line-through;
+}
+.bro-promo-action .bro-btn {
+  width: 100%;
+}
 .bro-intro {
   display: grid;
   grid-template-columns: 1fr 0.75fr 1fr;
@@ -722,6 +801,98 @@
   height: 20px;
   margin-top: 2px;
 }
+.bro-support-info {
+  display: grid;
+  gap: 14px;
+  max-width: 800px;
+  margin: 28px auto 0;
+  text-align: left;
+}
+.bro-support-info details {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-2) 92%, transparent);
+  box-shadow: var(--shadow);
+}
+.bro-support-info summary {
+  position: relative;
+  padding: 20px 54px 20px 22px;
+  color: var(--text);
+  font-size: 1.08rem;
+  font-weight: 850;
+  cursor: pointer;
+  list-style: none;
+}
+.bro-support-info summary::-webkit-details-marker {
+  display: none;
+}
+.bro-support-info summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  color: var(--bro);
+  font-size: 1.45rem;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+.bro-support-info details[open] summary::after {
+  content: "−";
+}
+.bro-support-info details[open] summary {
+  border-bottom: 1px solid var(--border);
+}
+.bro-support-info-content {
+  max-height: min(420px, 60vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 22px;
+  color: var(--muted);
+  scrollbar-gutter: stable;
+}
+.bro-support-info-content p,
+.bro-support-info-content li {
+  color: var(--muted);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.bro-support-info-content ul {
+  display: block !important;
+  margin: 14px 0 0;
+  padding-left: 1.35rem;
+  text-align: left;
+}
+.bro-support-info-content li + li {
+  margin-top: 10px;
+}
+.bro-support-info-content ul ul {
+  margin-top: 7px;
+}
+.bro-support-info-intro {
+  margin-top: 0;
+  font-style: italic;
+}
+.bro-support-info-note {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 107, 87, 0.35);
+  border-radius: 14px;
+  background: rgba(255, 107, 87, 0.08);
+  color: var(--text) !important;
+}
+.bro-changelog-entry h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.08rem;
+  line-height: 1.4;
+}
+.bro-changelog-entry h3 span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
 .bro-form-honey {
   position: absolute;
   left: -9999px;
@@ -958,6 +1129,16 @@
   .bro-support-diagnostics {
     grid-template-columns: 1fr;
   }
+  .bro-support-info summary {
+    padding: 18px 48px 18px 18px;
+  }
+  .bro-support-info summary::after {
+    right: 18px;
+  }
+  .bro-support-info-content {
+    max-height: 55vh;
+    padding: 18px;
+  }
   .bro-thanks-main {
     min-height: calc(100vh - 150px);
     padding: 34px 0 44px;
@@ -1068,6 +1249,18 @@
   }
   .bro-section {
     padding-block: 52px;
+  }
+  .bro-promo {
+    padding-top: 24px;
+  }
+  .bro-promo-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 30px 20px;
+    border-radius: 30px;
+  }
+  .bro-promo-action {
+    min-width: 0;
   }
   .bro-title {
     font-size: clamp(1.9rem, 10vw, 3rem);
